@@ -1,0 +1,2184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=" Admin Dashboard ">
+    <title>NeuroCare</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Base Styling  -->
+    <link rel="stylesheet" href="assets/main/css/fonts.css">
+    <link rel="stylesheet" href="assets/main/css/style.css">
+</head>
+
+<body>
+    <div id="main-wrapper" class="show">
+
+
+
+    <!-- start section sidebar -->
+    <aside class="left-panel nicescroll-box">
+        <nav class="navigation">
+            <ul class="list-unstyled main-menu">
+                <li class="has-submenu">
+                    <a href="javascript:void(0)" class="has-arrow mm-collapsed">
+                        <i class="icon fas fa-hospital"></i>
+                        <span class="nav-label">Department</span>
+                    </a>
+                            <ul class="list-unstyled mm-collapse">
+                                <!-- Add Department Button -->
+                                <li>
+                                    <a href="javascript:void(0)" data-toggle="modal" data-target="#addDepartmentModal">Add Department</a>
+                                </li>
+                                <!-- Update Department Button -->
+                                <li>
+                                    <a href="javascript:void(0)" data-toggle="modal" data-target="#updateDepartmentModal">Update Department</a>
+                                </li>
+                                <!-- Remove Department Button -->
+                                <li>
+                                    <a href="javascript:void(0)" data-toggle="modal" data-target="#removeDepartmentModal">Remove Department</a>
+                                </li>
+                                <!-- Departments Details Button -->
+                                <li><a href="department_details.html">Department Details</a></li>
+                            </ul>
+                    
+                    <li class="has-submenu">
+                        <a href="javascript:void()" class="has-arrow mm-collapsed">
+                            <i class="location-icon fas fa-map-marker-alt"></i>
+                            <span class="nav-label">Location</span>
+                        </a>
+                        <ul class="list-unstyled mm-collapse">
+                            <li>
+                                <a href="javascript:void(0)" data-toggle="modal" data-target="#addLocationModal">Add Location</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" data-toggle="modal" data-target="#updateLocationModal">Update Location</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" data-toggle="modal" data-target="#removeLocationModal">Remove Location</a>
+                            </li>
+                            <li><a href="location_details.html">Location Details</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has-submenu">
+                        <a href="javascript:void()" class="has-arrow mm-collapsed">
+                            <i class="door-icon fas fa-door-open"></i>
+                            <span class="nav-label">Room</span>
+                        </a>
+                        <ul class="list-unstyled mm-collapse">
+                            <li>
+                                <a href="javascript:void(0)" data-toggle="modal" data-target="#addRoomModal">Add Room</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" data-toggle="modal" data-target="#updateRoomModal">Update Room</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" data-toggle="modal" data-target="#removeRoomModal">Remove Room</a>
+                            </li>
+                            <li><a href="room_details.html">Room Details</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has-submenu">
+                        <a href="#" class="has-arrow mm-collapsed">
+                            <i class="fa fa-bed"></i>
+                            <span class="nav-label">Bed</span>
+                        </a>
+                        <ul class="list-unstyled mm-collapse">
+                            <li>
+                                <a href="javascript:void(0)" data-toggle="modal" data-target="#addBedModal">Add Bed</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" data-toggle="modal" data-target="#updateBedModal">Update Bed</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" data-toggle="modal" data-target="#removeBedModal">Remove Bed</a>
+                            </li>
+                            <li>
+                                <a href="bed_details.html">Bed Details</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+
+                    <li class="has-submenu">
+                        <a href="javascript:void()" class="has-arrow mm-collapsed">
+                            <i class="fas fa-user-md"></i>
+                            <span class="nav-label">Doctor</span>
+                        </a>
+                        <ul class="list-unstyled mm-collapse">
+                            <li><a href="#" id="all-doctors-link">All Doctors</a></li>
+                            <li><a href="javascript:void(0)" data-toggle="modal" data-target="#addDoctorModal">Add Doctor</a></li>
+                            <li><a href="add-prescriptions.html">Edit Doctor Details</a></li>
+                            <li><a href="javascript:void(0)" data-toggle="modal" data-target="#removeDoctorModal">Remove Doctor</a></li>
+                            <li><a href="add-prescriptions.html">Doctor Profile</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has-submenu">
+                        <a href="javascript:void()" class="has-arrow mm-collapsed">
+                            <i class="fas fa-user-nurse"></i>
+                            <span class="nav-label">Nurse</span>
+                        </a>
+                        <ul class="list-unstyled mm-collapse">
+                            <li><a href="#" id="all-nurses-link">All Doctors</a></li>
+                            <li><a href="javascript:void(0)" data-toggle="modal" data-target="#addNurseModal">Add Nurse</a></li>
+                            <li><a href="add-prescriptions.html">Edit Nurse Details</a></li>
+                            <li><a href="javascript:void(0)" data-toggle="modal" data-target="#removeNurseModal">Remove Nurse</a></li>
+                            <li><a href="add-prescriptions.html">Nurse Profile</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has-submenu">
+                        <a href="javascript:void()" class="has-arrow mm-collapsed">
+                            <i class="fas fa-user-tie"></i>
+                            <span class="nav-label">Staff</span>
+                        </a>
+                        <ul class="list-unstyled mm-collapse">
+                            <li><a href="#" id="all-staffs-link">All Staffs</a></li>
+                            <li><a href="javascript:void(0)" data-toggle="modal" data-target="#addStaffModal">Add Staff</a></li>
+                            <li><a href="add-prescriptions.html">Edit Staff Details</a></li>
+                            <li><a href="javascript:void(0)" data-toggle="modal" data-target="#removeStaffModal">Remove Staff</a></li>
+                            <li><a href="add-prescriptions.html">Staff Profile</a></li>
+                        </ul>
+                    </li>
+            </nav>
+            <script>
+            document.getElementById('all-doctors-link').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+
+    // HTML content for the doctors
+    const doctorsContent = `
+        <section class="py-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-xl-4 mb-4">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body text-center">
+                                <div class="mt-3 mb-4">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+                                        class="rounded-circle img-fluid" style="width: 80px;" />
+                                </div>
+                                <h5 class="mb-2">Dr. Julie L. Arsenault</h5>
+                                <p class="text-muted mb-4">Cardiologist <span class="mx-2">|</span> <a href="#">MBBS</a></p>
+                                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-rounded btn-sm">
+                                    View Profile
+                                </button>
+                                <div class="d-flex justify-content-between text-center mt-4 mb-2">
+                                    <div>
+                                        <p class="mb-2 h6">8471</p>
+                                        <p class="text-muted mb-0">Patients Treated</p>
+                                    </div>
+                                    <div class="px-3">
+                                        <p class="mb-2 h6">51</p>
+                                        <p class="text-muted mb-0">Years of Experience</p>
+                                    </div>
+                                    <div>
+                                        <p class="mb-2 h6">53</p>
+                                        <p class="text-muted mb-0">Age</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Repeat the structure for more doctor cards -->
+                    <div class="col-md-4 col-xl-4 mb-4">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body text-center">
+                                <div class="mt-3 mb-4">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
+                                        class="rounded-circle img-fluid" style="width: 80px;" />
+                                </div>
+                                <h5 class="mb-2">Dr. John Doe</h5>
+                                <p class="text-muted mb-4">Neurologist <span class="mx-2">|</span> <a href="#">MD</a></p>
+                                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-rounded btn-sm">
+                                    View Profile
+                                </button>
+                                <div class="d-flex justify-content-between text-center mt-4 mb-2">
+                                    <div>
+                                        <p class="mb-2 h6">5450</p>
+                                        <p class="text-muted mb-0">Patients Treated</p>
+                                    </div>
+                                    <div class="px-3">
+                                        <p class="mb-2 h6">20</p>
+                                        <p class="text-muted mb-0">Years of Experience</p>
+                                    </div>
+                                    <div>
+                                        <p class="mb-2 h6">45</p>
+                                        <p class="text-muted mb-0">Age</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xl-4 mb-4">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body text-center">
+                                <div class="mt-3 mb-4">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava4-bg.webp"
+                                        class="rounded-circle img-fluid" style="width: 80px;" />
+                                </div>
+                                <h5 class="mb-2">Dr. Jane Smith</h5>
+                                <p class="text-muted mb-4">Pediatrician <span class="mx-2">|</span> <a href="#">MD</a></p>
+                                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-rounded btn-sm">
+                                    View Profile
+                                </button>
+                                <div class="d-flex justify-content-between text-center mt-4 mb-2">
+                                    <div>
+                                        <p class="mb-2 h6">3000</p>
+                                        <p class="text-muted mb-0">Patients Treated</p>
+                                    </div>
+                                    <div class="px-3">
+                                        <p class="mb-2 h6">10</p>
+                                        <p class="text-muted mb-0">Years of Experience</p>
+                                    </div>
+                                    <div>
+                                        <p class="mb-2 h6">40</p>
+                                        <p class="text-muted mb-0">Age</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second row of doctor cards -->
+                <div class="row">
+                    <div class="col-md-4 col-xl-4 mb-4">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body text-center">
+                                <div class="mt-3 mb-4">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava5-bg.webp"
+                                        class="rounded-circle img-fluid" style="width: 80px;" />
+                                </div>
+                                <h5 class="mb-2">Dr. Michael Johnson</h5>
+                                <p class="text-muted mb-4">Orthopedist <span class="mx-2">|</span> <a href="#">DO</a></p>
+                                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-rounded btn-sm">
+                                    View Profile
+                                </button>
+                                <div class="d-flex justify-content-between text-center mt-4 mb-2">
+                                    <div>
+                                        <p class="mb-2 h6">7800</p>
+                                        <p class="text-muted mb-0">Patients Treated</p>
+                                    </div>
+                                    <div class="px-3">
+                                        <p class="mb-2 h6">30</p>
+                                        <p class="text-muted mb-0">Years of Experience</p>
+                                    </div>
+                                    <div>
+                                        <p class="mb-2 h6">55</p>
+                                        <p class="text-muted mb-0">Age</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xl-4 mb-4">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body text-center">
+                                <div class="mt-3 mb-4">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava6-bg.webp"
+                                        class="rounded-circle img-fluid" style="width: 80px;" />
+                                </div>
+                                <h5 class="mb-2">Dr. Emily Watson</h5>
+                                <p class="text-muted mb-4">Dermatologist <span class="mx-2">|</span> <a href="#">MD</a></p>
+                                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-rounded btn-sm">
+                                    View Profile
+                                </button>
+                                <div class="d-flex justify-content-between text-center mt-4 mb-2">
+                                    <div>
+                                        <p class="mb-2 h6">6200</p>
+                                        <p class="text-muted mb-0">Patients Treated</p>
+                                    </div>
+                                    <div class="px-3">
+                                        <p class="mb-2 h6">15</p>
+                                        <p class="text-muted mb-0">Years of Experience</p>
+                                    </div>
+                                    <div>
+                                        <p class="mb-2 h6">42</p>
+                                        <p class="text-muted mb-0">Age</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xl-4 mb-4">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body text-center">
+                                <div class="mt-3 mb-4">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava5-bg.webp"
+                                        class="rounded-circle img-fluid" style="width: 80px;" />
+                                </div>
+                                <h5 class="mb-2">Dr. Sarah Lee</h5>
+                                <p class="text-muted mb-4">Ophthalmologist <span class="mx-2">|</span> <a href="#">MD</a></p>
+                                                                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-rounded btn-sm">
+                                    View Profile
+                                </button>
+                                <div class="d-flex justify-content-between text-center mt-4 mb-2">
+                                    <div>
+                                        <p class="mb-2 h6">5000</p>
+                                        <p class="text-muted mb-0">Patients Treated</p>
+                                    </div>
+                                    <div class="px-3">
+                                        <p class="mb-2 h6">25</p>
+                                        <p class="text-muted mb-0">Years of Experience</p>
+                                    </div>
+                                    <div>
+                                        <p class="mb-2 h6">48</p>
+                                        <p class="text-muted mb-0">Age</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    `;
+
+    // Replace the content of the main-content div
+    document.getElementById('main-content').innerHTML = doctorsContent;
+});
+
+
+//*******//
+document.getElementById('all-nurses-link').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+
+// HTML content for the nurses
+const nursesContent = `
+        <section class="py-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-xl-4 mb-4">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body text-center">
+                                <div class="mt-3 mb-4">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+                                        class="rounded-circle img-fluid" style="width: 80px;" />
+                                </div>
+                                <h5 class="mb-2">Nurse. Julie L. Arsenault</h5>
+                                <p class="text-muted mb-4">Cardiologist <span class="mx-2">|</span> <a href="#">MBBS</a></p>
+                                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-rounded btn-sm">
+                                    View Profile
+                                </button>
+                                <div class="d-flex justify-content-between text-center mt-4 mb-2">
+                                    <div>
+                                        <p class="mb-2 h6">8471</p>
+                                        <p class="text-muted mb-0">Patients Treated</p>
+                                    </div>
+                                    <div class="px-3">
+                                        <p class="mb-2 h6">51</p>
+                                        <p class="text-muted mb-0">Years of Experience</p>
+                                    </div>
+                                    <div>
+                                        <p class="mb-2 h6">53</p>
+                                        <p class="text-muted mb-0">Age</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Repeat the structure for more doctor cards -->
+                    <div class="col-md-4 col-xl-4 mb-4">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body text-center">
+                                <div class="mt-3 mb-4">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
+                                        class="rounded-circle img-fluid" style="width: 80px;" />
+                                </div>
+                                <h5 class="mb-2">Nurse. John Doe</h5>
+                                <p class="text-muted mb-4">Neurologist <span class="mx-2">|</span> <a href="#">MD</a></p>
+                                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-rounded btn-sm">
+                                    View Profile
+                                </button>
+                                <div class="d-flex justify-content-between text-center mt-4 mb-2">
+                                    <div>
+                                        <p class="mb-2 h6">5450</p>
+                                        <p class="text-muted mb-0">Patients Treated</p>
+                                    </div>
+                                    <div class="px-3">
+                                        <p class="mb-2 h6">20</p>
+                                        <p class="text-muted mb-0">Years of Experience</p>
+                                    </div>
+                                    <div>
+                                        <p class="mb-2 h6">45</p>
+                                        <p class="text-muted mb-0">Age</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xl-4 mb-4">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body text-center">
+                                <div class="mt-3 mb-4">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava4-bg.webp"
+                                        class="rounded-circle img-fluid" style="width: 80px;" />
+                                </div>
+                                <h5 class="mb-2">Nurse. Jane Smith</h5>
+                                <p class="text-muted mb-4">Pediatrician <span class="mx-2">|</span> <a href="#">MD</a></p>
+                                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-rounded btn-sm">
+                                    View Profile
+                                </button>
+                                <div class="d-flex justify-content-between text-center mt-4 mb-2">
+                                    <div>
+                                        <p class="mb-2 h6">3000</p>
+                                        <p class="text-muted mb-0">Patients Treated</p>
+                                    </div>
+                                    <div class="px-3">
+                                        <p class="mb-2 h6">10</p>
+                                        <p class="text-muted mb-0">Years of Experience</p>
+                                    </div>
+                                    <div>
+                                        <p class="mb-2 h6">40</p>
+                                        <p class="text-muted mb-0">Age</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second row of doctor cards -->
+                <div class="row">
+                    <div class="col-md-4 col-xl-4 mb-4">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body text-center">
+                                <div class="mt-3 mb-4">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava5-bg.webp"
+                                        class="rounded-circle img-fluid" style="width: 80px;" />
+                                </div>
+                                <h5 class="mb-2">Nurse. Michael Johnson</h5>
+                                <p class="text-muted mb-4">Orthopedist <span class="mx-2">|</span> <a href="#">DO</a></p>
+                                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-rounded btn-sm">
+                                    View Profile
+                                </button>
+                                <div class="d-flex justify-content-between text-center mt-4 mb-2">
+                                    <div>
+                                        <p class="mb-2 h6">7800</p>
+                                        <p class="text-muted mb-0">Patients Treated</p>
+                                    </div>
+                                    <div class="px-3">
+                                        <p class="mb-2 h6">30</p>
+                                        <p class="text-muted mb-0">Years of Experience</p>
+                                    </div>
+                                    <div>
+                                        <p class="mb-2 h6">55</p>
+                                        <p class="text-muted mb-0">Age</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xl-4 mb-4">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body text-center">
+                                <div class="mt-3 mb-4">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava6-bg.webp"
+                                        class="rounded-circle img-fluid" style="width: 80px;" />
+                                </div>
+                                <h5 class="mb-2">Nurse. Emily Watson</h5>
+                                <p class="text-muted mb-4">Dermatologist <span class="mx-2">|</span> <a href="#">MD</a></p>
+                                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-rounded btn-sm">
+                                    View Profile
+                                </button>
+                                <div class="d-flex justify-content-between text-center mt-4 mb-2">
+                                    <div>
+                                        <p class="mb-2 h6">6200</p>
+                                        <p class="text-muted mb-0">Patients Treated</p>
+                                    </div>
+                                    <div class="px-3">
+                                        <p class="mb-2 h6">15</p>
+                                        <p class="text-muted mb-0">Years of Experience</p>
+                                    </div>
+                                    <div>
+                                        <p class="mb-2 h6">42</p>
+                                        <p class="text-muted mb-0">Age</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xl-4 mb-4">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body text-center">
+                                <div class="mt-3 mb-4">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava5-bg.webp"
+                                        class="rounded-circle img-fluid" style="width: 80px;" />
+                                </div>
+                                <h5 class="mb-2">Nurse. Sarah Lee</h5>
+                                <p class="text-muted mb-4">Ophthalmologist <span class="mx-2">|</span> <a href="#">MD</a></p>
+                                                                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-rounded btn-sm">
+                                    View Profile
+                                </button>
+                                <div class="d-flex justify-content-between text-center mt-4 mb-2">
+                                    <div>
+                                        <p class="mb-2 h6">5000</p>
+                                        <p class="text-muted mb-0">Patients Treated</p>
+                                    </div>
+                                    <div class="px-3">
+                                        <p class="mb-2 h6">25</p>
+                                        <p class="text-muted mb-0">Years of Experience</p>
+                                    </div>
+                                    <div>
+                                        <p class="mb-2 h6">48</p>
+                                        <p class="text-muted mb-0">Age</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    `;
+
+    // Replace the content of the main-content div
+    document.getElementById('main-content').innerHTML = nursesContent;
+});
+
+//******//
+
+document.getElementById('all-staffs-link').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+
+ // HTML content for the nurses
+const staffsContent = `
+        <section class="py-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-xl-4 mb-4">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body text-center">
+                                <div class="mt-3 mb-4">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+                                        class="rounded-circle img-fluid" style="width: 80px;" />
+                                </div>
+                                <h5 class="mb-2">Staff. Julie L. Arsenault</h5>
+                                <p class="text-muted mb-4">Cardiologist <span class="mx-2">|</span> <a href="#">MBBS</a></p>
+                                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-rounded btn-sm">
+                                    View Profile
+                                </button>
+                                <div class="d-flex justify-content-between text-center mt-4 mb-2">
+                                    <div>
+                                        <p class="mb-2 h6">8471</p>
+                                        <p class="text-muted mb-0">Patients Treated</p>
+                                    </div>
+                                    <div class="px-3">
+                                        <p class="mb-2 h6">51</p>
+                                        <p class="text-muted mb-0">Years of Experience</p>
+                                    </div>
+                                    <div>
+                                        <p class="mb-2 h6">53</p>
+                                        <p class="text-muted mb-0">Age</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Repeat the structure for more doctor cards -->
+                    <div class="col-md-4 col-xl-4 mb-4">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body text-center">
+                                <div class="mt-3 mb-4">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
+                                        class="rounded-circle img-fluid" style="width: 80px;" />
+                                </div>
+                                <h5 class="mb-2">Staff. John Doe</h5>
+                                <p class="text-muted mb-4">Neurologist <span class="mx-2">|</span> <a href="#">MD</a></p>
+                                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-rounded btn-sm">
+                                    View Profile
+                                </button>
+                                <div class="d-flex justify-content-between text-center mt-4 mb-2">
+                                    <div>
+                                        <p class="mb-2 h6">5450</p>
+                                        <p class="text-muted mb-0">Patients Treated</p>
+                                    </div>
+                                    <div class="px-3">
+                                        <p class="mb-2 h6">20</p>
+                                        <p class="text-muted mb-0">Years of Experience</p>
+                                    </div>
+                                    <div>
+                                        <p class="mb-2 h6">45</p>
+                                        <p class="text-muted mb-0">Age</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xl-4 mb-4">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body text-center">
+                                <div class="mt-3 mb-4">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava4-bg.webp"
+                                        class="rounded-circle img-fluid" style="width: 80px;" />
+                                </div>
+                                <h5 class="mb-2">Staff. Jane Smith</h5>
+                                <p class="text-muted mb-4">Pediatrician <span class="mx-2">|</span> <a href="#">MD</a></p>
+                                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-rounded btn-sm">
+                                    View Profile
+                                </button>
+                                <div class="d-flex justify-content-between text-center mt-4 mb-2">
+                                    <div>
+                                        <p class="mb-2 h6">3000</p>
+                                        <p class="text-muted mb-0">Patients Treated</p>
+                                    </div>
+                                    <div class="px-3">
+                                        <p class="mb-2 h6">10</p>
+                                        <p class="text-muted mb-0">Years of Experience</p>
+                                    </div>
+                                    <div>
+                                        <p class="mb-2 h6">40</p>
+                                        <p class="text-muted mb-0">Age</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second row of doctor cards -->
+                <div class="row">
+                    <div class="col-md-4 col-xl-4 mb-4">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body text-center">
+                                <div class="mt-3 mb-4">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava5-bg.webp"
+                                        class="rounded-circle img-fluid" style="width: 80px;" />
+                                </div>
+                                <h5 class="mb-2">Staff. Michael Johnson</h5>
+                                <p class="text-muted mb-4">Orthopedist <span class="mx-2">|</span> <a href="#">DO</a></p>
+                                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-rounded btn-sm">
+                                    View Profile
+                                </button>
+                                <div class="d-flex justify-content-between text-center mt-4 mb-2">
+                                    <div>
+                                        <p class="mb-2 h6">7800</p>
+                                        <p class="text-muted mb-0">Patients Treated</p>
+                                    </div>
+                                    <div class="px-3">
+                                        <p class="mb-2 h6">30</p>
+                                        <p class="text-muted mb-0">Years of Experience</p>
+                                    </div>
+                                    <div>
+                                        <p class="mb-2 h6">55</p>
+                                        <p class="text-muted mb-0">Age</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xl-4 mb-4">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body text-center">
+                                <div class="mt-3 mb-4">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava6-bg.webp"
+                                        class="rounded-circle img-fluid" style="width: 80px;" />
+                                </div>
+                                <h5 class="mb-2">Staff. Emily Watson</h5>
+                                <p class="text-muted mb-4">Dermatologist <span class="mx-2">|</span> <a href="#">MD</a></p>
+                                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-rounded btn-sm">
+                                    View Profile
+                                </button>
+                                <div class="d-flex justify-content-between text-center mt-4 mb-2">
+                                    <div>
+                                        <p class="mb-2 h6">6200</p>
+                                        <p class="text-muted mb-0">Patients Treated</p>
+                                    </div>
+                                    <div class="px-3">
+                                        <p class="mb-2 h6">15</p>
+                                        <p class="text-muted mb-0">Years of Experience</p>
+                                    </div>
+                                    <div>
+                                        <p class="mb-2 h6">42</p>
+                                        <p class="text-muted mb-0">Age</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xl-4 mb-4">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body text-center">
+                                <div class="mt-3 mb-4">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava5-bg.webp"
+                                        class="rounded-circle img-fluid" style="width: 80px;" />
+                                </div>
+                                <h5 class="mb-2">Staff. Sarah Lee</h5>
+                                <p class="text-muted mb-4">Ophthalmologist <span class="mx-2">|</span> <a href="#">MD</a></p>
+                                                                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-rounded btn-sm">
+                                    View Profile
+                                </button>
+                                <div class="d-flex justify-content-between text-center mt-4 mb-2">
+                                    <div>
+                                        <p class="mb-2 h6">5000</p>
+                                        <p class="text-muted mb-0">Patients Treated</p>
+                                    </div>
+                                    <div class="px-3">
+                                        <p class="mb-2 h6">25</p>
+                                        <p class="text-muted mb-0">Years of Experience</p>
+                                    </div>
+                                    <div>
+                                        <p class="mb-2 h6">48</p>
+                                        <p class="text-muted mb-0">Age</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    `;
+
+    // Replace the content of the main-content div
+    document.getElementById('main-content').innerHTML = staffsContent;
+});
+
+</script>
+
+            <div class="sidebar-widgets">
+                <div class="top-sidebar box-shadow mx-25 m-b-30 p-b-20 text-center">
+                    <a href="new-appointment.html">
+                        <img src="assets/images/appointement.svg" class="side-img" alt="img">
+                    </a>
+                    <!-- <a href="#">
+                        <h4 class="text-primary mb-0">#</h4>
+                    </a> -->
+                </div>
+                <div class="copyright text-center">
+                    <p class="mb-0">  Dashboard</p>
+                    <p class="mb-0"> © 2024 </p>
+                </div>
+            </div>
+        </aside>
+        <!-- End section sidebar -->
+<!-- Add Department Modal -->
+<div class="modal fade" id="addDepartmentModal" tabindex="-1" role="dialog" aria-labelledby="addDepartmentModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addDepartmentModalTitle">Add Department</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addDepartmentForm" action="/api/add-department" method="POST">
+                    <div class="form-group">
+                        <label for="departmentName">Department Name</label>
+                        <input type="text" class="form-control" id="departmentName" name="departmentName" placeholder="Enter department name" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer text-center d-flex justify-content-center">
+                <button type="submit" form="addDepartmentForm" class="btn btn-primary">Add Department</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Update Department Modal -->
+<div class="modal fade" id="updateDepartmentModal" tabindex="-1" role="dialog" aria-labelledby="updateDepartmentModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateDepartmentModalLabel">Update Department</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Departments List -->
+                <ul id="departmentsList" class="list-group">
+                    <!-- Example departments (you can dynamically generate these) -->
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Cardiology
+                        <button type="button" class="btn btn-sm btn-primary" onclick="editDepartment('Cardiology')">Edit</button>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Neurology
+                        <button type="button" class="btn btn-sm btn-primary" onclick="editDepartment('Neurology')">Edit</button>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Pediatrics
+                        <button type="button" class="btn btn-sm btn-primary" onclick="editDepartment('Pediatrics')">Edit</button>
+                    </li>
+                </ul>
+
+                <!-- Edit Department Form -->
+                <div id="editDepartmentForm" style="display: none; margin-top: 20px;">
+                    <div class="form-group">
+                        <label for="currentDepartmentName">Current Department Name</label>
+                        <input type="text" class="form-control" id="currentDepartmentName" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="newDepartmentName">New Department Name</label>
+                        <input type="text" class="form-control" id="newDepartmentName" placeholder="Enter new department name">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-between">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="saveChangesButton" style="display: none;" onclick="submitUpdateDepartmentForm()">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+                <!-- Remove Department Modal -->
+<div class="modal fade" id="removeDepartmentModal" tabindex="-1" role="dialog" aria-labelledby="removeDepartmentModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="removeDepartmentModalTitle">Remove Department</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="removeDepartmentForm">
+                    <div class="form-group">
+                        <label for="removeDepartmentName">Select Department to Remove</label>
+                        <select class="form-control" id="removeDepartmentName">
+                            <option value="" disabled selected>Select a department</option>
+                            <!-- Example departments, replace these with actual department names from your database -->
+                            <option value="ICU">ICU</option>
+                            <option value="Emergency">Emergency</option>
+                            <option value="Pediatrics">Pediatrics</option>
+                            <option value="Radiology">Radiology</option>
+                            <!-- Add more options dynamically if needed -->
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="button" class="btn btn-danger" onclick="submitRemoveDepartmentForm()">Remove Department</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+        <!-- Add Location Modal -->
+<div class="modal fade" id="addLocationModal" tabindex="-1" role="dialog" aria-labelledby="addLocationModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addLocationModalLabel">Add Location</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addLocationForm">
+                    <div class="form-group">
+                        <label for="departmentDropdown">Select Department</label>
+                        <select class="form-control" id="departmentDropdown">
+                            <!-- Departments will be populated here dynamically -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="locationName">Location Name</label>
+                        <input type="text" class="form-control" id="locationName" placeholder="Enter location name">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="submitAddLocationForm()">Add Location</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Update Location Modal -->
+<div class="modal fade" id="updateLocationModal" tabindex="-1" role="dialog" aria-labelledby="updateLocationModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateLocationModalLabel">Update Location</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Locations List -->
+                <ul id="locationsList" class="list-group">
+                    <!-- Example locations (you can dynamically generate these) -->
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Building A
+                        <button type="button" class="btn btn-sm btn-primary" onclick="editLocation('Building A')">Edit</button>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Building B
+                        <button type="button" class="btn btn-sm btn-primary" onclick="editLocation('Building B')">Edit</button>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Building C
+                        <button type="button" class="btn btn-sm btn-primary" onclick="editLocation('Building C')">Edit</button>
+                    </li>
+                </ul>
+
+
+                <!-- Edit Location Form -->
+                <div id="editLocationForm" style="display: none; margin-top: 20px;">
+                    <div class="form-group">
+                        <label for="currentLocationName">Current Location Name</label>
+                        <input type="text" class="form-control" id="currentLocationName" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="newLocationName">New Location Name</label>
+                        <input type="text" class="form-control" id="newLocationName" placeholder="Enter new location name">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-between">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="saveLocationChangesButton" style="display: none;" onclick="submitUpdateLocationForm()">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Remove Location Modal -->
+<div class="modal fade" id="removeLocationModal" tabindex="-1" role="dialog" aria-labelledby="removeLocationModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="removeLocationModalTitle">Remove Location</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="removeLocationForm">
+                    <div class="form-group">
+                        <label for="removeLocationName">Select Location to Remove</label>
+                        <select class="form-control" id="removeLocationName">
+                            <option value="" disabled selected>Select a location</option>
+                            <!-- Example locations, replace these with actual location names from your database -->
+                            <option value="Main Building">Main Building</option>
+                            <option value="East Wing">East Wing</option>
+                            <option value="West Wing">West Wing</option>
+                            <option value="Annex">Annex</option>
+                            <!-- Add more options dynamically if needed -->
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="button" class="btn btn-danger" onclick="submitRemoveLocationForm()">Remove Location</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Add Room Modal -->
+<div class="modal fade" id="addRoomModal" tabindex="-1" role="dialog" aria-labelledby="addRoomModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addRoomModalLabel">Add Room</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addRoomForm">
+                    <div class="form-group">
+                        <label for="roomNumber">Room Number</label>
+                        <input type="text" class="form-control" id="roomNumber" placeholder="Enter room number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="roomType">Room Type</label>
+                        <input type="text" class="form-control" id="roomType" placeholder="Enter room type" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="roomDepartment">Department</label>
+                        <select class="form-control" id="roomDepartment">
+                            <!-- Example options -->
+                            <option value="1">Cardiology</option>
+                            <option value="2">Neurology</option>
+                            <option value="3">Orthopedics</option>
+                            <!-- Dynamic options will replace these examples -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="roomLocation">Location</label>
+                        <select class="form-control" id="roomLocation">
+                            <!-- Example options -->
+                            <option value="1">First Floor</option>
+                            <option value="2">Second Floor</option>
+                            <option value="3">Third Floor</option>
+                            <!-- Dynamic options will replace these examples -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="roomCapacity">Capacity</label>
+                        <input type="number" class="form-control" id="roomCapacity" placeholder="Enter room capacity" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="button" class="btn btn-primary" onclick="submitAddRoomForm()">Add Room</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Update Room Modal -->
+<div class="modal fade" id="updateRoomModal" tabindex="-1" role="dialog" aria-labelledby="updateRoomModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateRoomModalLabel">Update Room</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Room List -->
+                <ul id="roomsList" class="list-group">
+                    <!-- Example rooms (you can dynamically generate these) -->
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Room 101
+                        <button type="button" class="btn btn-sm btn-primary" onclick="editRoom('Room 101')">Edit</button>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Room 202
+                        <button type="button" class="btn btn-sm btn-primary" onclick="editRoom('Room 202')">Edit</button>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Room 303
+                        <button type="button" class="btn btn-sm btn-primary" onclick="editRoom('Room 303')">Edit</button>
+                    </li>
+                </ul>
+
+                <!-- Edit Room Form -->
+                <div id="editRoomForm" style="display: none; margin-top: 20px;">
+                    <div class="form-group">
+                        <label for="currentRoomNumber">Current Room Number</label>
+                        <input type="text" class="form-control" id="currentRoomNumber" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="newRoomNumber">New Room Number</label>
+                        <input type="text" class="form-control" id="newRoomNumber" placeholder="Enter new room number">
+                    </div>
+                    <div class="form-group">
+                        <label for="newRoomType">New Room Type</label>
+                        <input type="text" class="form-control" id="newRoomType" placeholder="Enter new room type">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-between">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="saveRoomChangesButton" style="display: none;" onclick="submitUpdateRoomForm()">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Remove Room Modal -->
+<div class="modal fade" id="removeRoomModal" tabindex="-1" role="dialog" aria-labelledby="removeRoomModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="removeRoomModalTitle">Remove Room</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="removeRoomForm">
+                    <div class="form-group">
+                        <label for="removeRoomNumber">Select Room to Remove</label>
+                        <select class="form-control" id="removeRoomNumber">
+                            <option value="" disabled selected>Select a room</option>
+                            <!-- Example rooms, replace these with actual room numbers/names from your database -->
+                            <option value="Room 101">Room 101</option>
+                            <option value="Room 102">Room 102</option>
+                            <option value="Room 201">Room 201</option>
+                            <option value="Room 202">Room 202</option>
+                            <!-- Add more options dynamically if needed -->
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="button" class="btn btn-danger" onclick="submitRemoveRoomForm()">Remove Room</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Add Bed Modal -->
+<div class="modal fade" id="addBedModal" tabindex="-1" role="dialog" aria-labelledby="addBedModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addBedModalLabel">Add Bed</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addBedForm">
+                    <div class="form-group">
+                        <label for="roomSelection">Room</label>
+                        <select class="form-control" id="roomSelection">
+                            <!-- Options will be dynamically loaded from the backend -->
+                            <option value="" disabled selected>Select room</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="bedName">Bed Name</label>
+                        <input type="text" class="form-control" id="bedName" placeholder="Enter bed name" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="button" class="btn btn-primary" onclick="submitAddBedForm()">Add Bed</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Update Bed Modal -->
+<div class="modal fade" id="updateBedModal" tabindex="-1" role="dialog" aria-labelledby="updateBedModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateBedModalLabel">Update Bed</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Edit Bed Form -->
+                <div id="editBedForm">
+                    <div class="form-group">
+                        <label for="currentBedName">Current Bed Name</label>
+                        <input type="text" class="form-control" id="currentBedName" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="newBedName">New Bed Name</label>
+                        <input type="text" class="form-control" id="newBedName" placeholder="Enter new bed name">
+                    </div>
+                    <div class="form-group">
+                        <label for="newBedType">New Bed Type</label>
+                        <input type="text" class="form-control" id="newBedType" placeholder="Enter new bed type">
+                    </div>
+                    <div class="form-group">
+                        <label for="newBedRoom">New Room</label>
+                        <select class="form-control" id="newBedRoom">
+                            <!-- Example rooms, dynamically populate options here -->
+                            <option value="Room 101">Room 101</option>
+                            <option value="Room 202">Room 202</option>
+                            <option value="Room 303">Room 303</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="submitUpdateBedForm()">Save Changes</button>
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-between">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Remove Bed Modal -->
+<div class="modal fade" id="removeBedModal" tabindex="-1" role="dialog" aria-labelledby="removeBedModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="removeBedModalTitle">Remove Bed</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="removeBedForm">
+                    <div class="form-group">
+                        <label for="removeBedNumber">Select Bed to Remove</label>
+                        <select class="form-control" id="removeBedNumber">
+                            <option value="" disabled selected>Select a bed</option>
+                            <!-- Example beds, replace these with actual bed numbers/names from your database -->
+                            <option value="Bed 01">Bed 01</option>
+                            <option value="Bed 02">Bed 02</option>
+                            <option value="Bed 03">Bed 03</option>
+                            <option value="Bed 04">Bed 04</option>
+                            <!-- Add more options dynamically if needed -->
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="button" class="btn btn-danger" onclick="submitRemoveBedForm()">Remove Bed</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- View Doctors Modal -->
+<div class="modal fade" id="viewDoctorsModal" tabindex="-1" role="dialog" aria-labelledby="viewDoctorsModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="viewDoctorsModalTitle">Doctor List</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul class="list-group" id="doctorList">
+                    <!-- Example Doctor List Items -->
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Dr. John Doe
+                        <button class="btn btn-primary btn-sm" onclick="showDoctorProfile('John Doe')">Show Profile</button>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Dr. Jane Smith
+                        <button class="btn btn-primary btn-sm" onclick="showDoctorProfile('Jane Smith')">Show Profile</button>
+                    </li>
+                    <!-- More doctors can be dynamically added here -->
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Example function to handle the "Show Profile" button click
+    function showDoctorProfile(doctorName) {
+        alert("Showing profile for " + doctorName);
+        // Replace with actual functionality to display doctor's profile
+    }
+</script>
+
+
+<!-- Add Doctor Modal -->
+<div class="modal fade" id="addDoctorModal" tabindex="-1" role="dialog" aria-labelledby="addDoctorModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addDoctorModalLabel">Add Doctor</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addDoctorForm">
+                    <!-- Profile Picture -->
+                    <div class="form-group">
+                        <label for="doctorProfile">Profile Picture</label>
+                        <input type="file" class="form-control-file" id="doctorProfile">
+                    </div>
+
+                    <!-- Personal Information -->
+                    <h6>Personal Information:</h6>
+                    <div class="form-group">
+                        <label for="doctorFullName">Full Name</label>
+                        <input type="text" class="form-control" id="doctorFullName" placeholder="Enter full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="doctorGender">Gender</label>
+                        <select class="form-control" id="doctorGender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="doctorDOB">Date of Birth</label>
+                        <input type="date" class="form-control" id="doctorDOB">
+                    </div>
+                    <div class="form-group">
+                        <label for="doctorContactNumber">Contact Number</label>
+                        <input type="text" class="form-control" id="doctorContactNumber" placeholder="Enter contact number">
+                    </div>
+                    <div class="form-group">
+                        <label for="doctorEmail">Email Address</label>
+                        <input type="email" class="form-control" id="doctorEmail" placeholder="Enter email address">
+                    </div>
+                    <div class="form-group">
+                        <label for="doctorAddress">Address</label>
+                        <textarea class="form-control" id="doctorAddress" placeholder="Enter address"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="doctorEmergencyContact">Emergency Contact Information</label>
+                        <input type="text" class="form-control" id="doctorEmergencyContact" placeholder="Enter emergency contact information">
+                    </div>
+
+                    <!-- Professional Information -->
+                    <h6>Professional Information:</h6>
+                    <div class="form-group">
+                        <label for="doctorDepartment">Department</label>
+                        <select class="form-control" id="doctorDepartment">
+                            <option value="Neurology">Neurology</option>
+                            <option value="Cardiology">Cardiology</option>
+                            <option value="Pediatrics">Pediatrics</option>
+                            <!-- Add other departments as needed -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="doctorSpecialization">Specialization</label>
+                        <input type="text" class="form-control" id="doctorSpecialization" placeholder="Enter specialization">
+                    </div>
+                    <div class="form-group">
+                        <label for="doctorJoiningDate">Joining Date</label>
+                        <input type="date" class="form-control" id="doctorJoiningDate">
+                    </div>
+
+                    <!-- Credentials -->
+                    <h6>Credentials:</h6>
+                    <div class="form-group">
+                        <label for="doctorLicenseNumber">Medical License Number</label>
+                        <input type="text" class="form-control" id="doctorLicenseNumber" placeholder="Enter license number">
+                    </div>
+                    <div class="form-group">
+                        <label for="doctorLicenseExpiry">License Expiry Date</label>
+                        <input type="date" class="form-control" id="doctorLicenseExpiry">
+                    </div>
+                    <div class="form-group">
+                        <label for="doctorQualifications">Educational Qualifications</label>
+                        <textarea class="form-control" id="doctorQualifications" placeholder="Enter qualifications"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="doctorCertifications">Certifications (e.g., MD, PhD)</label>
+                        <textarea class="form-control" id="doctorCertifications" placeholder="Enter certifications"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="doctorExperience">Years of Experience</label>
+                        <input type="text" class="form-control" id="doctorExperience" placeholder="Enter years of experience">
+                    </div>
+
+                    <!-- System Access -->
+                    <h6>System Access:</h6>
+                    <div class="form-group">
+                        <label for="doctorUsername">Username</label>
+                        <input type="text" class="form-control" id="doctorUsername" placeholder="Enter username">
+                    </div>
+                    <div class="form-group">
+                        <label for="doctorPassword">Password</label>
+                        <input type="password" class="form-control" id="doctorPassword" placeholder="Enter password">
+                    </div>
+                    <div class="form-group">
+                        <label for="doctorRole">Role in System</label>
+                        <select class="form-control" id="doctorRole">
+                            <option value="doctor">Doctor</option>
+                            <option value="consultant">Consultant</option>
+                        </select>
+                    </div>
+
+                    <!-- Submission Button -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Add Doctor</button>
+                    </div>                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Remove Doctor Modal -->
+<div class="modal fade" id="removeDoctorModal" tabindex="-1" role="dialog" aria-labelledby="removeDoctorModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="removeDoctorModalTitle">Remove Doctor</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Select a doctor to remove:</p>
+                <ul class="list-group" id="removeDoctorList">
+                    <!-- Example doctor items -->
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Dr. John Doe
+                        <input type="checkbox" name="doctorToRemove" value="1">
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Dr. Jane Smith
+                        <input type="checkbox" name="doctorToRemove" value="2">
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" onclick="removeDoctors()">Remove Selected</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- View Nurses Modal -->
+<div class="modal fade" id="viewNursesModal" tabindex="-1" role="dialog" aria-labelledby="viewNursesModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="viewNursesModalTitle">Nurse List</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul class="list-group" id="nurseList">
+                    <!-- Example nurse items -->
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Nurse Alice Johnson
+                        <button class="btn btn-primary btn-sm" onclick="viewNurseProfile(1)">Show Profile</button>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Nurse Bob Brown
+                        <button class="btn btn-primary btn-sm" onclick="viewNurseProfile(2)">Show Profile</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add Nurse Modal -->
+<div class="modal fade" id="addNurseModal" tabindex="-1" role="dialog" aria-labelledby="addNurseModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addNurseModalLabel">Add Nurse</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addNurseForm">
+                    <!-- Profile Picture -->
+                    <div class="form-group">
+                        <label for="nurseProfile">Profile Picture</label>
+                        <input type="file" class="form-control-file" id="nurseProfile">
+                    </div>
+
+                    <!-- Personal Information -->
+                    <h6>Personal Information:</h6>
+                    <div class="form-group">
+                        <label for="nurseFullName">Full Name</label>
+                        <input type="text" class="form-control" id="nurseFullName" placeholder="Enter full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="nurseGender">Gender</label>
+                        <select class="form-control" id="nurseGender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="nurseDOB">Date of Birth</label>
+                        <input type="date" class="form-control" id="nurseDOB">
+                    </div>
+                    <div class="form-group">
+                        <label for="nurseContactNumber">Contact Number</label>
+                        <input type="text" class="form-control" id="nurseContactNumber" placeholder="Enter contact number">
+                    </div>
+                    <div class="form-group">
+                        <label for="nurseEmail">Email Address</label>
+                        <input type="email" class="form-control" id="nurseEmail" placeholder="Enter email address">
+                    </div>
+                    <div class="form-group">
+                        <label for="nurseAddress">Address</label>
+                        <textarea class="form-control" id="nurseAddress" placeholder="Enter address"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="nurseEmergencyContact">Emergency Contact Information</label>
+                        <input type="text" class="form-control" id="nurseEmergencyContact" placeholder="Enter emergency contact information">
+                    </div>
+
+                    <!-- Professional Information -->
+                    <h6>Professional Information:</h6>
+                    <div class="form-group">
+                        <label for="nurseDepartment">Department</label>
+                        <select class="form-control" id="nurseDepartment">
+                            <option value="ICU">ICU</option>
+                            <option value="Emergency">Emergency</option>
+                            <option value="Pediatrics">Pediatrics</option>
+                            <!-- Add other departments as needed -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="nurseDesignation">Designation or Role</label>
+                        <input type="text" class="form-control" id="nurseDesignation" placeholder="Enter designation or role">
+                    </div>
+                    <div class="form-group">
+                        <label for="nurseJoiningDate">Joining Date</label>
+                        <input type="date" class="form-control" id="nurseJoiningDate">
+                    </div>
+
+                    <!-- Credentials -->
+                    <h6>Credentials:</h6>
+                    <div class="form-group">
+                        <label for="nurseLicenseNumber">Nursing License Number</label>
+                        <input type="text" class="form-control" id="nurseLicenseNumber" placeholder="Enter license number">
+                    </div>
+                    <div class="form-group">
+                        <label for="nurseLicenseExpiry">License Expiry Date</label>
+                        <input type="date" class="form-control" id="nurseLicenseExpiry">
+                    </div>
+                    <div class="form-group">
+                        <label for="nurseQualifications">Educational Qualifications</label>
+                        <textarea class="form-control" id="nurseQualifications" placeholder="Enter qualifications"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="nurseSpecializations">Specializations (if any)</label>
+                        <textarea class="form-control" id="nurseSpecializations" placeholder="Enter specializations"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="nurseCertifications">Certifications (e.g., BLS, ACLS)</label>
+                        <textarea class="form-control" id="nurseCertifications" placeholder="Enter certifications"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="nurseExperience">Years of Experience</label>
+                        <input type="text" class="form-control" id="nurseExperience" placeholder="Enter years of experience">
+                    </div>
+
+                    <!-- System Access -->
+                    <h6>System Access:</h6>
+                    <div class="form-group">
+                        <label for="nurseUsername">Username</label>
+                        <input type="text" class="form-control" id="nurseUsername" placeholder="Enter username">
+                    </div>
+                    <div class="form-group">
+                        <label for="nursePassword">Password</label>
+                        <input type="password" class="form-control" id="nursePassword" placeholder="Enter password">
+                    </div>
+                    <div class="form-group">
+                        <label for="nurseRole">Role in System</label>
+                        <select class="form-control" id="nurseRole">
+                            <option value="nurse">Nurse</option>
+                            <option value="head-nurse">Head Nurse</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Add Nurse</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Remove Nurse Modal -->
+<div class="modal fade" id="removeNurseModal" tabindex="-1" role="dialog" aria-labelledby="removeNurseModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="removeNurseModalTitle">Remove Nurse</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Select a nurse to remove:</p>
+                <ul class="list-group" id="removeNurseList">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Nurse Alice Johnson
+                        <input type="checkbox" name="doctorToRemove" value="1">
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Nurse Bob Brown
+                        <input type="checkbox" name="doctorToRemove" value="2">
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" onclick="removeNurses()">Remove Selected</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- View Staff Modal -->
+<div class="modal fade" id="viewStaffModal" tabindex="-1" role="dialog" aria-labelledby="viewStaffModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="viewStaffModalTitle">Staff List</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul class="list-group" id="staffList">
+                    <!-- Example staff items -->
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Staff Member Chris Green
+                        <button class="btn btn-primary btn-sm" onclick="viewStaffProfile(1)">Show Profile</button>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Staff Member Dana White
+                        <button class="btn btn-primary btn-sm" onclick="viewStaffProfile(2)">Show Profile</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Add Staff Modal -->
+<div class="modal fade" id="addStaffModal" tabindex="-1" role="dialog" aria-labelledby="addStaffModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addStaffModalLabel">Add Staff</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addStaffForm">
+                    <!-- Profile Picture -->
+                    <div class="form-group">
+                        <label for="staffProfile">Profile Picture</label>
+                        <input type="file" class="form-control-file" id="staffProfile">
+                    </div>
+
+                    <!-- Personal Information -->
+                    <h6>Personal Information:</h6>
+                    <div class="form-group">
+                        <label for="staffFullName">Full Name</label>
+                        <input type="text" class="form-control" id="staffFullName" placeholder="Enter full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="staffGender">Gender</label>
+                        <select class="form-control" id="staffGender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="staffDOB">Date of Birth</label>
+                        <input type="date" class="form-control" id="staffDOB">
+                    </div>
+                    <div class="form-group">
+                        <label for="staffContactNumber">Contact Number</label>
+                        <input type="text" class="form-control" id="staffContactNumber" placeholder="Enter contact number">
+                    </div>
+                    <div class="form-group">
+                        <label for="staffEmail">Email Address</label>
+                        <input type="email" class="form-control" id="staffEmail" placeholder="Enter email address">
+                    </div>
+                    <div class="form-group">
+                        <label for="staffAddress">Address</label>
+                        <textarea class="form-control" id="staffAddress" placeholder="Enter address"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="staffEmergencyContact">Emergency Contact Information</label>
+                        <input type="text" class="form-control" id="staffEmergencyContact" placeholder="Enter emergency contact information">
+                    </div>
+
+                    <!-- Professional Information -->
+                    <h6>Professional Information:</h6>
+                    <div class="form-group">
+                        <label for="staffDepartment">Department</label>
+                        <select class="form-control" id="staffDepartment">
+                            <option value="Administration">Administration</option>
+                            <option value="Maintenance">Maintenance</option>
+                            <option value="Security">Security</option>
+                            <!-- Add other departments as needed -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="staffJoiningDate">Joining Date</label>
+                        <input type="date" class="form-control" id="staffJoiningDate">
+                    </div>
+
+                    <!-- System Access -->
+                    <h6>System Access:</h6>
+                    <div class="form-group">
+                        <label for="staffUsername">Username</label>
+                        <input type="text" class="form-control" id="staffUsername" placeholder="Enter username">
+                    </div>
+                    <div class="form-group">
+                        <label for="staffPassword">Password</label>
+                        <input type="password" class="form-control" id="staffPassword" placeholder="Enter password">
+                    </div>
+                    <div class="form-group">
+                        <label for="staffRole">Role in System</label>
+                        <select class="form-control" id="staffRole">
+                            <option value="staff">Staff</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Remove Staff Modal -->
+<div class="modal fade" id="removeStaffModal" tabindex="-1" role="dialog" aria-labelledby="removeStaffModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="removeStaffModalTitle">Remove Staff</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Select a staff member to remove:</p>
+                <ul class="list-group" id="removeStaffList">
+                    <!-- Example staff items -->
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Staff Member Chris Green
+                        <input type="checkbox" name="doctorToRemove" value="1">
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Staff Member Dana White
+                        <input type="checkbox" name="doctorToRemove" value="2">
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" onclick="removeStaff()">Remove Selected</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function removeLocation(locationName) {
+        // Implement the logic to remove the location from the database
+        console.log("Location to remove:", locationName);
+        // Refresh or update the list after removal
+    }
+</script>
+
+
+        <!-- start logo components -->
+        <div class="nav-header">
+            <div class="brand-logo">
+                <a href="index.html"> <img class="logo-tabib" src="assets/images/download.png" alt=""></a>
+                <a href="index.html"><img class="brand-title" src="#a" alt=""></a>
+            </div>
+        </div>
+        <!-- End logo components -->
+
+
+        <!-- start section header -->
+        <div class="header">
+            <header class="top-head container-fluid">
+                <div class="nav-control">
+                    <div class="hamburger">
+                        <span class="line"></span><span class="line"></span><span class="line"></span>
+                    </div>
+        
+                </div>
+                <div class="header-right">
+                    <div class="fullscreen notification_dropdown widget-5">
+                        <div class="full">
+                            <a class="text-dark" href="#!" onclick="javascript:toggleFullScreen()">
+                                <i class="fas fa-expand"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="widget-6">
+                        <div class="cart-wrapper">
+                            <div class="cart-icon">
+                                <a class="cart-control" href="#">
+                                    <i class="fas fa-bell"></i>
+                                    <div class="pulse-css"></div>
+                                </a>
+                            </div>
+                            
+                    </div>
+                    <div class="my-account-wrapper widget-7">
+                        <div class="account-wrapper">
+                            <div class="account-control">
+                                <a class="login header-profile" href="#" title="Sign in">
+                                    <div class="header-info">
+                                        <span>Maya</span>
+                                        <small>Admin</small>
+                                    </div>
+                                    <img src="assets/images/avtar/admin.jpg" alt="people">
+                                </a>
+                                <div class="account-dropdown-form dropdown-container">
+                                    <div class="form-content">
+                                        <a href="doctor-settings.html">
+                                            <i class="far fa-user"></i>
+                                            <span class="ml-2">Profile</span>
+                                        </a>
+                                        <a href="#">
+                                            <i class="far fa-envelope"></i>
+                                            <span class="ml-2">Inbox</span>
+                                        </a>
+                                        <a href="page-login.html">
+                                            <i class="fas fa-sign-in-alt"></i>
+                                            <span class="ml-2">Logout </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <!-- End section header -->
+
+
+        <!-- start section content -->
+        <div class="content-body">
+            <div class="warper container-fluid">
+                <!-- <div class="row page-titles mx-0">
+                    <div class="col-lg-12 p-md-0">
+                        <h4 class="text-primary"># <span class="names">#</span></h4>
+                        <p class="mb-0">#</p>
+                    </div>
+                </div> -->
+                <div id="main-content">
+                <div class="new-patients main_container">
+                    <div class="row">
+                        <div class="col-sm-6 col-xl-3 col-lg-6">
+                            <div class="widget card card-primary bg-card1">
+                                <div class="card-body">
+                                    <div class="media text-center">
+                                        <span>
+                                            <i class="fas fa-user-md fa-2x"></i>
+                                        </span>
+                                        <div class="media-body">
+                                            <span class="text-white">Total Doctor</span>
+                                            <h3 class="mb-0 text-white">300</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3 col-lg-6">
+                            <div class="widget card card-danger bg-card2">
+                                <div class="card-body">
+                                    <div class="media text-center">
+                                        <span>
+                                            <i class="fas fa-user-nurse fa-2x"></i>
+                                        </span>
+                                        <div class="media-body">
+                                            <span class="text-white">Total Nurse</span>
+                                            <h3 class="mb-0 text-white">50</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3 col-lg-6">
+                            <div class="widget card card-primary bg-card3">
+                                <div class="card-body">
+                                    <div class="media text-center">
+                                        <span>
+                                            <i class="fas fa-user-tie fa-2x"></i>
+                                        </span>
+                                        <div class="media-body">
+                                            <span class="text-white">Total Staff</span>
+                                            <h3 class="mb-0 text-white">45</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3 col-lg-6">
+                            <div class="widget card card-primary bg-card4">
+                                <div class="card-body">
+                                    <div class="media text-center">
+                                        <span>
+                                            <i class="icon fas fa-hospital fa-2x"></i>
+                                        </span>
+                                        <div class="media-body">
+                                            <span class="text-white">Total Departments</span>
+                                            <h3 class="mb-0 text-white">65</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card shadow">
+                                <div class="card-header">
+                                    <h4 class="card-title">Doctor's List</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table id="example1" class="display nowrap">
+                                            <thead>
+                                                <tr>
+                                                    <th>Time</th>
+                                                    <th>Date</th>
+                                                    <th>Patient</th>
+                                                    <th>Phone</th>
+                                                    <th>Status</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="patientTableBody">
+                                                <!-- Rows will be added here by JavaScript -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- End section content -->
+
+
+        <!-- start section footer -->
+        <div class="footer">
+            <div class="copyright">
+                <p class="mb-0">Copyright © Designed &amp; Developed by <a href="msu.edu.in" target="_blank">MSU</a> 2024
+                </p>
+            </div>
+        </div>
+        <!-- End section footer -->
+
+
+    </div>
+
+   <!-- Include jQuery and DataTables JS -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script>
+$(document).ready(function() {
+            // Load modals into the container
+            $("#modals-container").load("modals/departments-list.html");
+            $("#modals-container").load("modals/location-details.html");
+            $("#modals-container").load("modals/room-details.html");
+            $("#modals-container").load("modals/bed-details.html");
+        });
+
+ function submitDepartmentForm() {
+    const departmentName = document.getElementById('departmentName').value;
+
+    // Check if the department name is not empty
+    if (!departmentName) {
+        alert("Please enter a department name");
+        return;
+    }
+    
+    // Send the data to the server using fetch
+    fetch('/addDepartmentModal', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ departmentName: departmentName })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.message === 'Department added successfully') {
+            alert("Department added successfully!");
+        } else {
+            alert("An error occurred: " + data.message);
+        }
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        alert('An error occurred while adding the department');
+    });
+}
+
+
+    function editDepartment(departmentName) {
+        // Show the edit department form
+        document.getElementById('editDepartmentForm').style.display = 'block';
+
+        // Set the current department name in the input field
+        document.getElementById('currentDepartmentName').value = departmentName;
+
+        // Show the save changes button
+        document.getElementById('saveChangesButton').style.display = 'inline-block';
+    }
+
+    function submitUpdateDepartmentForm() {
+        const currentDepartmentName = document.getElementById('currentDepartmentName').value;
+        const newDepartmentName = document.getElementById('newDepartmentName').value;
+        console.log("Updating Department:", currentDepartmentName, "to", newDepartmentName);
+        // Add your form submission logic here.
+    }
+
+    function submitRemoveDepartmentForm() {
+        const removeDepartmentName = document.getElementById('removeDepartmentName').value;
+        console.log("Department to Remove:", removeDepartmentName);
+        // Add your form submission logic here.
+    }
+
+    function editLocation(locationName) {
+        document.getElementById('currentLocationName').value = locationName;
+        document.getElementById('editLocationForm').style.display = 'block';
+        document.getElementById('saveLocationChangesButton').style.display = 'block';
+    }
+
+    function submitUpdateLocationForm() {
+        const currentLocationName = document.getElementById('currentLocationName').value;
+        const newLocationName = document.getElementById('newLocationName').value;
+        // Perform the update operation (e.g., via AJAX)
+        console.log("Updating location:", currentLocationName, "to:", newLocationName);
+    }
+    
+
+// Example bed data for demonstration purposes
+const bedData = {
+    "Bed 1": { name: "Bed 1", type: "General", room: "Room 101" },
+    "Bed 2": { name: "Bed 2", type: "ICU", room: "Room 202" },
+    "Bed 3": { name: "Bed 3", type: "Private", room: "Room 303" }
+};
+
+// Function to handle the Edit button click
+function editBed(bedName) {
+    // Fetch the bed data (in real implementation, fetch this from the backend)
+    const bed = bedData[bedName];
+
+    if (bed) {
+        // Populate the form fields with the current bed data
+        document.getElementById('currentBedName').value = bed.name;
+        document.getElementById('newBedName').value = bed.name;
+        document.getElementById('newBedType').value = bed.type;
+        document.getElementById('newBedRoom').value = bed.room;
+        
+        // Show the modal
+        $('#updateBedModal').modal('show');
+    }
+}
+
+// Function to handle the Save Changes button click
+function submitUpdateBedForm() {
+    // Get the updated values from the form
+    const newBedName = document.getElementById('newBedName').value;
+    const newBedType = document.getElementById('newBedType').value;
+    const newBedRoom = document.getElementById('newBedRoom').value;
+
+    // Find the current bed name (in reality, you might have an ID instead of the name)
+    const currentBedName = document.getElementById('currentBedName').value;
+
+    // Update the bed data (in a real implementation, you'd send this to the backend)
+    if (bedData[currentBedName]) {
+        bedData[currentBedName].name = newBedName;
+        bedData[currentBedName].type = newBedType;
+        bedData[currentBedName].room = newBedRoom;
+    }
+
+    // Hide the modal after saving changes
+    $('#updateBedModal').modal('hide');
+
+    // Optionally, you could refresh the list or update the UI
+    alert('Bed updated successfully!');
+}
+
+
+    function editRoom(roomName) {
+    document.getElementById('currentRoomNumber').value = roomName;
+    document.getElementById('editRoomForm').style.display = 'block';
+    document.getElementById('saveRoomChangesButton').style.display = 'block';
+}
+        $(document).ready(function() {
+            // Fetch patient data from the server
+            fetch('http://localhost:3004/patients')
+                .then(response => response.json())
+                .then(data => {
+                    const tableBody = $('#patientTableBody');
+                    
+                    // Clear existing rows
+                    tableBody.empty();
+
+                    // Populate table with data
+                    data.forEach(patient => {
+                        const row = `
+                            <tr>
+                                <td>${patient.time || 'N/A'}</td>
+                                <td>${patient.date || 'N/A'}</td>
+                                <td>${patient.first_name} ${patient.middle_name || ''} ${patient.last_name}</td>
+                                <td>${patient.contact_no}</td>
+                                <td>${patient.status || 'N/A'}</td>
+                                <td><button class="btn btn-primary">Action</button></td>
+                            </tr>
+                        `;
+                        tableBody.append(row);
+                    });
+
+                   // Initialize DataTable
+                   $('#example1').DataTable();
+               })
+               .catch(error => console.error('Error fetching patient data:', error));
+       });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Select the 'Bed Details' link
+        const bedDetailsLink = document.querySelector('a[href="bed_details.html"]');
+
+        // Add a click event listener to the link
+        bedDetailsLink.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default anchor behavior
+            
+            // Redirect to bed_details.html
+            window.location.href = 'bed_details.html';
+        });
+    });
+       </script>
+    <!-- JQuery v3.5.1 -->
+    <script src="assets/plugins/jquery/jquery.min.js"></script>
+    <!-- popper js -->
+    <script src="assets/plugins/popper/popper.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="assets/plugins/bootstrap/js/bootstrap.js"></script>
+    <!-- Moment -->
+    <script src="assets/plugins/moment/moment.min.js"></script>
+    <!-- Date Range Picker -->
+    <script src="assets/plugins/daterangepicker/daterangepicker.min.js"></script>
+    <!-- Datatable -->
+    <script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/js/init-tdatatable.js"></script>
+    <!-- Chart js -->
+    <script src="assets/plugins/chart/chart/Chart.min.js"></script>
+    <script src="assets/js/charts-custom.js"></script>
+    <!-- Main Custom JQuery -->
+    <script src="assets/js/toggleFullScreen.js"></script>
+    <script src="assets/js/main.js"></script>
+    <!-- <script src="assets/js/option-themes.js"></script> -->
+</body>
+
+</html>

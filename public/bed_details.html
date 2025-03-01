@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=" Admin Dashboard ">
+    <title>NeuroCare</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png">
+    <!-- Base Styling  -->
+    <link rel="stylesheet" href="assets/main/css/fonts.css">
+    <link rel="stylesheet" href="assets/main/css/style.css">
+
+   <li><a href="/all-test">All Tests</a></li>
+   <li><a href="all-vitals.html" id="viewVitalsLink">All Vitals</a></li>
+
+
+    
+     <style>
+/* Professional Modal Background */
+.modal, .custom-modal, .heema-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Darker Overlay for Contrast */
+    backdrop-filter: blur(6px);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Standard Modal Content (Original Size) */
+.modal-content {
+    background: #ffffff; /* White Background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle Shadow */
+    border: 1px solid #e0e0e0; /* Light Gray Border */
+    margin: 20px auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    animation: slideDown 0.3s ease-in-out;
+    position: relative;
+    top: 10px;
+}
+
+/* Smaller Custom Modals */
+.custom-modal-content, .heema-modal-content {
+    background: #ffffff; /* White Background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle Shadow */
+    border: 1px solid #e0e0e0; /* Light Gray Border */
+    margin: 20px auto;
+    padding: 15px; /* Reduced Padding */
+    width: 80%; /* Smaller Width */
+    max-width: 400px; /* Smaller Max Width */
+    animation: slideDown 0.3s ease-in-out;
+    position: relative;
+    top: 10px;
+}
+
+/* Professional Close Button */
+.close, .custom-close, .heema-close {
+    background: #007bff; /* Blue */
+    color: #ffffff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.close:hover, .custom-close:hover, .heema-close:hover {
+    background: #0056b3; /* Darker Blue */
+}
+
+/* Professional Heading and Text Styles */
+.modal-content h2, .custom-modal-content h2, .heema-modal-content h2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 22px;
+    color: #333333; /* Dark Gray */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal-content label, .custom-modal-content label, .heema-modal-content label {
+    font-family: 'Arial', sans-serif;
+    color: #666666; /* Medium Gray */
+    display: block;
+    margin: 10px 0 5px;
+}
+
+/* Professional Input and Button Styles */
+.modal-content input[type="text"], .custom-modal-content input[type="text"], .heema-modal-content input[type="text"],
+.modal-content input[type="email"], .custom-modal-content input[type="email"], .heema-modal-content input[type="email"],
+.modal-content input[type="date"], .custom-modal-content input[type="date"], .heema-modal-content input[type="date"],
+.modal-content select, .custom-modal-content select, .heema-modal-content select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc; /* Light Gray */
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9; /* Very Light Gray */
+}
+
+.modal-content input[type="submit"], .custom-modal-content button, .heema-modal-content button {
+    background-color: #007bff; /* Blue */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+}
+
+.modal-content input[type="submit"]:hover, .custom-modal-content button:hover, .heema-modal-content button:hover {
+    background-color: #0056b3; /* Darker Blue */
+    transform: scale(1.05);
+}
+
+/* Professional Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-10px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Smaller Add Vitals Modal */
+#addVitalsModal .heema-modal-content {
+    width: 70%; /* Adjust width as needed */
+    max-width: 400px; /* Adjust max width as needed */
+}
+
+/* Specific styling for form inputs inside the Add Vitals Modal */
+#addVitalsModal .heema-modal-content input[type="text"],
+#addVitalsModal .heema-modal-content select {
+    width: calc(100% - 20px);
+    padding: 8px; /* Reduced padding */
+    margin-bottom: 12px; /* Reduced margin */
+    font-size: 12px; /* Smaller font size */
+}
+
+/* Adjust button size inside the Add Vitals Modal */
+#addVitalsModal .heema-modal-content button {
+    padding: 8px 16px;
+    font-size: 12px;
+}
+
+
+
+    </style>
+</head>
+
+<body>
+    
+    
+    
+    
+    <div id="main-wrapper" class="show">
+
+
+
+
+        <!-- start section sidebar -->
+        <aside class="left-panel nicescroll-box">
+            <nav class="navigation">
+                <ul class="list-unstyled main-menu">
+                    <li class="has-submenu active">
+                        <a href="index.html">
+                            <i class="fas fa-th-large"></i>
+                            <span class="nav-label">Dashboard</span>
+                        </a>
+                    </li>
+
+                <!-- Sidebar Menu -->
+    <ul class="list-unstyled">
+        <li class="has-submenu">
+            <a href="javascript:void(0)" class="has-arrow mm-collapsed">
+                <i class="fas fa-users"></i>
+                <span class="nav-label">Patients</span>
+            </a>
+            <ul class="list-unstyled mm-collapse">
+                <li><a href="javascript:void(0)" id="openModal">New Patient</a></li>
+                <li><a href="all-patient.html">All Patients</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form action="Connection.js" method="post" enctype="multipart/form-data">
+                <div class="form-row">
+                    <label for="first_name">First Name:</label>
+                    <input type="text" id="first_name" name="first_name" required>
+                </div>
+                <div class="form-row">
+                    <label for="middle_name">Middle Name:</label>
+                    <input type="text" id="middle_name" name="middle_name">
+                </div>
+                <div class="form-row">
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" id="last_name" name="last_name" required>
+                </div>
+                <div class="form-row">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="contact_no">Contact No:</label>
+                    <input type="text" id="contact_no" name="contact_no">
+                </div>
+                <div class="form-row">
+                    <label for="emergency_contact_no">Emergency Contact No:</label>
+                    <input type="text" id="emergency_contact_no" name="emergency_contact_no">
+                </div>
+                <div class="form-row">
+                    <label for="email_id">Email ID:</label>
+                    <input type="email" id="email_id" name="email_id">
+                </div>
+                <div class="form-row">
+                    <label for="date_of_birth">Date of Birth:</label>
+                    <input type="date" id="date_of_birth" name="date_of_birth">
+                </div>
+                <div class="form-row">
+                    <label for="blood_group">Blood Group:</label>
+                    <select id="blood_group" name="blood_group">
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="father_name">Father's Name:</label>
+                    <input type="text" id="father_name" name="father_name">
+                </div>
+                <div class="form-row">
+                    <label for="mother_name">Mother's Name:</label>
+                    <input type="text" id="mother_name" name="mother_name">
+                </div>
+                <div class="form-row">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address">
+                </div>
+                <div class="form-row">
+                    <label for="admitted_by">Admitted By:</label>
+                    <input type="text" id="admitted_by" name="admitted_by">
+                </div>
+                <div class="form-row">
+                    <label for="ward">Ward:</label>
+                    <input type="text" id="ward" name="ward">
+                </div>
+                <div class="form-row">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+               <li class="has-submenu">
+    <a href="javascript:void(0)" class="has-arrow mm-collapsed">
+        <i class="fas fa-bed"></i>
+        <span class="nav-label">Beds</span>
+    </a>
+    <ul class="list-unstyled mm-collapse">
+        <li><a href="javascript:void(0)" onclick="openModal('newBedModal')">New Bed</a></li>
+        
+            <li><a href="all-bed.html">All bed</a></li>
+        
+    </ul>
+</li>
+
+<!-- Modal for New Bed -->
+<div id="newBedModal" class="custom-modal">
+    <div class="custom-modal-content">
+        <span class="custom-close" onclick="closeModal('newBedModal')">&times;</span>
+        <h2>New Bed</h2>
+        <form action="/add-bed" method="POST">
+            <label for="bedName">Bed Name:</label>
+            <input type="text" id="bedName" name="bedName" required>
+            
+            <label for="bedType">Bed Type:</label>
+            <input type="text" id="bedType" name="bedType" required>
+            
+            <label for="ward">Ward:</label>
+            <input type="text" id="ward" name="ward" required>
+            
+            <label for="floor">Floor:</label>
+            <input type="number" id="floor" name="floor" required>
+            
+            <label for="availability">Availability:</label>
+            <select id="availability" name="availability" required>
+                <option value="available">Available</option>
+                <option value="occupied">Occupied</option>
+                <option value="under_maintenance">Under Maintenance</option>
+            </select>
+            
+            <label for="description">Description:</label>
+            <textarea id="description" name="description"></textarea>
+            
+            <button type="submit">Add Bed</button>
+        </form>
+        
+        <ul id="beds-list"></ul>
+    </div>
+</div>
+
+
+
+
+                
+
+
+<li class="has-submenu">
+    <a href="#" id="openAddDrugsModal">
+        <i class="fas fa-pills"></i>
+        <span class="nav-label"> Drug</span>
+    </a>
+</li>
+
+<!-- View Drugs Modal -->
+<div id="addDrugsModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>View Drugs</h2>
+        <div class="view-only">
+            <p>You do not have permission to add drugs. You can only view the drug information below:</p>
+            <ul>
+                <!-- Example drugs list -->
+                <li>Drug Name: Paracetamol | Dosage: 500mg | Frequency: Twice a day</li>
+                <li>Drug Name: Amoxicillin | Dosage: 250mg | Frequency: Three times a day</li>
+                <!-- More drugs can be listed here -->
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<li class="has-submenu">
+    <a href="javascript:void()" class="has-arrow mm-collapsed">
+        <i class="fas fa-heartbeat"></i>
+        <span class="nav-label">Tests</span>
+    </a>
+    <ul class="list-unstyled mm-collapse">
+        <li><a href="javascript:void()" id="addTestLink">Add Test</a></li>
+        <li><a href="/all-tests">All Tests</a></li> <!-- Updated link -->
+    </ul>
+</li>
+
+
+<!-- Add Test Modal -->
+<div id="addTestModal" class="heema-modal">
+    <div class="heema-modal-content">
+        <span class="heema-close">&times;</span>
+        <h2>Add Test</h2>
+        <form id="addTestForm" action="/api/add-test" method="POST">
+            <label for="name">Test Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description">
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category">
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" step="0.01" required>
+            <button type="submit">Submit</button>
+        </form>
+        
+        
+        
+    
+        <ul id="tests-list"></ul>
+        
+    </div>
+</div>
+
+<!-- All Tests Modal -->
+<div id="allTestsModal" class="heema-modal">
+    <div class="heema-modal-content">
+        <span class="heema-close">&times;</span>
+        <h2>All Tests</h2>
+        <p>List of all tests will be shown here.</p>
+    </div>
+</div>
+
+
+
+
+<!-- Vitals Menu Item -->
+<aside>
+    <ul>
+        <!-- Other menu items -->
+        <li class="has-submenu">
+            <a href="javascript:void(0)" class="has-arrow mm-collapsed">
+                <i class="fas fa-heartbeat"></i>
+                <span class="nav-label">Vitals</span>
+            </a>
+            <ul class="list-unstyled mm-collapse">
+                <li><a href="javascript:void(0);" id="addVitalsLink" onclick="openAddVitalsModal()">Add Vitals</a></li>
+                <li><a href="all-vitals.html" id="viewVitalsLink">All Vitals</a></li>
+            </ul>
+        </li>
+    </ul>
+</aside>
+
+<!-- Main Content Area -->
+<div class="main-content">
+    <!-- Other content sections -->
+</div>
+
+<!-- Add Vitals Modal -->
+<div id="addVitalsModal" class="heema-modal">
+    <div class="heema-modal-content">
+        <span class="heema-close">&times;</span>
+        <h2>Add Vitals</h2>
+        <form id="vitalsForm">
+            <label for="patient_id">Patient ID:</label>
+            <input type="text" id="patient_id" name="patient_id" required>
+            <label for="bloodPressure">Blood Pressure:</label>
+            <input type="text" id="bloodPressure" name="bloodPressure" required>
+            <label for="heartRate">Heart Rate:</label>
+            <input type="text" id="heartRate" name="heartRate" required>
+            <label for="respiratoryRate">Respiratory Rate:</label>
+            <input type="text" id="respiratoryRate" name="respiratoryRate" required>
+            <label for="bodyTemperature">Body Temperature:</label>
+            <input type="text" id="bodyTemperature" name="bodyTemperature" required>
+            <label for="oxygenSaturation">Oxygen Saturation:</label>
+            <input type="text" id="oxygenSaturation" name="oxygenSaturation" required>
+            <button type="submit">Add Vitals</button>
+        </form>
+    </div>
+</div>
+
+<!-- All Vitals Modal -->
+<div id="allVitalsModal" class="heema-modal">
+    <div class="heema-modal-content">
+        <span class="heema-close">&times;</span>
+        <h2>All Vitals</h2>
+        <table id="vitalsTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Blood Pressure</th>
+                    <th>Heart Rate</th>
+                    <th>Respiratory Rate</th>
+                    <th>Body Temperature</th>
+                    <th>Oxygen Saturation</th>
+                    <th>Recorded Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Vitals will be appended here -->
+            </tbody>
+        </table>
+    </div>
+</div>
+          
+                    
+            </nav>
+            
+            <div class="sidebar-widgets">
+                <div class="top-sidebar box-shadow mx-25 m-b-30 p-b-20 text-center">
+                    <a href="new-appointment.html">
+                        <img src="assets/images/appointement.svg" class="side-img" alt="img">
+                    </a>
+                    
+                </div>
+                <div class="copyright text-center">
+                    <p class="mb-0"> Doctor Dashboard</p>
+                    <p class="mb-0"> © 2024 </p>
+                </div>
+            </div>
+        </aside>
+        <!-- End section sidebar -->
+
+
+        
+        <!-- End logo components -->
+
+
+        <!-- start section header -->
+        <div class="header">
+            <header class="top-head container-fluid">
+                <div class="nav-control">
+                    <div class="hamburger">
+                        <span class="line"></span><span class="line"></span><span class="line"></span>
+                    </div>
+                    
+                </div>
+                <div class="header-right">
+                    <div class="fullscreen notification_dropdown widget-5">
+                        <div class="full">
+                            <a class="text-dark" href="#!" onclick="javascript:toggleFullScreen()">
+                                <i class="fas fa-expand"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="widget-6">
+                        <div class="cart-wrapper">
+                            <div class="cart-icon">
+                                <a class="cart-control" href="#">
+                                    <i class="fas fa-bell"></i>
+                                    <div class="pulse-css"></div>
+                                </a>
+                            </div>
+                            
+                    </div>
+                    <div class="my-account-wrapper widget-7">
+                        <div class="account-wrapper">
+                            <div class="account-control">
+                                <a class="login header-profile" href="#" title="Sign in">
+                                    <div class="header-info">
+                                        <span></span>
+                                        <small>Nurse</small>
+                                    </div>
+                                    <img src="#" alt="client">
+                                </a>
+                                <div class="account-dropdown-form dropdown-container">
+                                    <div class="form-content">
+                                        <a href="doctor-settings.html">
+                                            <i class="far fa-user"></i>
+                                            <span class="ml-2">Profile</span>
+                                        </a>
+                                        <a href="#">
+                                            <i class="far fa-envelope"></i>
+                                            <span class="ml-2">Inbox</span>
+                                        </a>
+                                        <a href="page-login.html">
+                                            <i class="fas fa-sign-in-alt"></i>
+                                            <span class="ml-2">Logout </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <!-- End section header -->
+
+
+         <!-- start section content -->
+    <div class="content-body">
+        <div class="warper container-fluid">
+            <div class="new-patients main_container">
+                <div class="row">
+                    <div class="col-sm-6 col-xl-3 col-lg-6">
+                        <div class="widget card card-primary bg-card1">
+                            <div class="card-body">
+                                <div class="media text-center">
+                                    <span>
+                                        <i class="fas fa-calendar-check fa-2x"></i>
+                                    </span>
+                                    <div class="media-body">
+                                        <span class="text-white">Total Bed</span>
+                                        <h3 class="mb-0 text-white" id="total-bed">Loading...</h3> <!-- ID added for dynamic data -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3 col-lg-6">
+                        <div class="widget card card-danger bg-card2">
+                          <div class="card-body">
+                            <div class="media text-center">
+                              <span>
+                                <i class="fas fa-user-nurse fa-2x"></i>
+                              </span>
+                              <div class="media-body">
+                                <span class="text-white">ICU</span>
+                                <h3 id="icu-ward-count" class="mb-0 text-white">0</h3>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="col-sm-6 col-xl-3 col-lg-6">
+                        <div class="widget card card-primary bg-card3">
+                          <div class="card-body">
+                            <div class="media text-center">
+                              <span>
+                                <i class="fas fa-user-plus fa-2x"></i>
+                              </span>
+                              <div class="media-body">
+                                <span class="text-white">Female Ward</span>
+                                <h3 id="female-ward-count" class="mb-0 text-white">0</h3> <!-- This will be updated by JavaScript -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="col-sm-6 col-xl-3 col-lg-6">
+                        <div class="widget card card-primary bg-card4">
+                          <div class="card-body">
+                            <div class="media text-center">
+                              <span>
+                                <i class="fas fa-database fa-2x"></i>
+                              </span>
+                              <div class="media-body">
+                                <span class="text-white">Male Ward</span>
+                                <h3 id="male-ward-count" class="mb-0 text-white">0</h3> <!-- This will be updated by JavaScript -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      
+    <!-- end section content -->
+                    
+                        
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card shadow">
+                                <div class="card-header">
+                                    <h4 class="card-title">Patient List | 04 Aug 2022</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table id="example1" class="display nowrap">
+                                            <thead>
+                                                <tr>
+                                                    <th>Time</th>
+                                                    <th>Date</th>
+                                                    <th>Patient</th>
+                                                    <th>Phone</th>
+                                                    <th>Status</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        07:00
+                                                    </td>
+                                                    <td>01 Jun 2022</td>
+                                                    <td> Michael R Sheets </td>
+                                                    <td> 1468 Selah Way - Rabat</td>
+                                                    <td>833 - 844 - 0100</td>
+                                                    <td class="text-start">
+                                                        <span class="badge badge-primary">Start appt</span>
+                                                    </td>
+                                                    <td>
+                                                        <a href="javascript:void()" class='mr-4 check'> <span
+                                                                class='fas fa-check'></span></a>
+                                                        <a href="javascript:void()" class='delet'> <span
+                                                                class='fas fa-trash-alt tbl-delet'></span> </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End section content -->
+
+
+        <!-- start section footer -->
+        <div class="footer">
+            <div class="copyright">
+                <p class="mb-0">Copyright © Designed &amp; Developed by <a href="msu.edu.in" target="_blank">MSU</a> 2024
+                </p>
+            </div>
+        </div>
+        <!-- End section footer -->
+<!-- start logo components -->
+<div class="nav-header">
+    <div class="brand-logo">
+        <a href="doctor_index.html"> <img class="logo-tabib" src="assets/images/download.png" alt=""></a>
+        <a href="doctor_index.html"><img class="brand-title" src="#a" alt=""></a>
+    </div>
+</div>
+
+    </div>
+    <!-- JQuery v3.5.1 -->
+    <script src="assets/plugins/jquery/jquery.min.js"></script>
+    <!-- popper js -->
+    <script src="assets/plugins/popper/popper.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="assets/plugins/bootstrap/js/bootstrap.js"></script>
+    <!-- Moment -->
+    <script src="assets/plugins/moment/moment.min.js"></script>
+    <!-- Date Range Picker -->
+    <script src="assets/plugins/daterangepicker/daterangepicker.min.js"></script>
+    <!-- Datatable -->
+    <script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/js/init-tdatatable.js"></script>
+    <!-- Chart js -->
+    <script src="assets/plugins/chart/chart/Chart.min.js"></script>
+    <script src="assets/js/charts-custom.js"></script>
+    <!-- Main Custom JQuery -->
+    <script src="assets/js/toggleFullScreen.js"></script>
+    <script src="assets/js/main.js"></script>
+    <!-- <script src="assets/js/option-themes.js"></script> -->
+
+    
+
+
+
+
+
+</body>
+
+</html>

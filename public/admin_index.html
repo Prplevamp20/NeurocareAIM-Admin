@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=" Admin Dashboard ">
+    <title>NeuroCare</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Base Styling  -->
+    <link rel="stylesheet" href="assets/main/css/fonts.css">
+    <link rel="stylesheet" href="assets/main/css/style.css">
+</head>
+<style>
+#departmentDropdown {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: white;
+  padding: 10px;
+  font-size: 16px;
+  color: #4a90e2;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+#departmentDropdown option {
+  font-size: 14px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Optional: You can add custom styling to make it more like the image */
+
+
+    /* Custom styling for the Department Details panel */
+.panel-heading .title {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.text-primary {
+    color: #555EC0 !important;}
+
+.table .thead-dark th {
+    background-color:#7366ff;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+}
+
+.pagination-info {
+    font-size: 0.9rem;
+    
+}
+
+.pagination .page-item.active .page-link {
+    background-color:#555EC0;
+    border-color:#555EC0;
+    color:#fff;
+}
+
+.pagination .page-item .page-link {
+    color:#555EC0;
+}
+
+.pagination .page-item .page-link:hover {
+    background-color: #e9ecef;
+}
+
+</style>
+<body>
+    <div id="main-wrapper" class="show">
+    
+<!-- start section sidebar -->
+    <aside class="left-panel nicescroll-box">
+        <nav class="navigation">
+            <ul class="list-unstyled main-menu">
+                <li class="has-submenu">
+                    <a href="javascript:void(0)" class="has-arrow mm-collapsed">
+                        <i class="icon fas fa-hospital"></i>
+                        <span class="nav-label">Department</span>
+                    </a>
+                            <ul class="list-unstyled mm-collapse">
+    <!-- Add Department Button -->
+    <li>
+        <a href="javascript:void(0)" data-toggle="modal" data-target="#addDepartmentModal">Add Department</a>
+    </li>
+    <!-- Update Department Button -->
+    <li>
+        <a href="javascript:void(0)" data-toggle="modal" data-target="#updateDepartmentModal">Update Department</a>
+    </li>
+    <!-- Remove Department Button -->
+    <li>
+        <a href="javascript:void(0)" data-toggle="modal" data-target="#removeDepartmentModal">Remove Department</a>
+    </li>
+    <!-- Departments Details Button -->
+    <li><a href="javascript:void(0)" id="toggleDepartmentDetails">Department Details</a></li>
+</ul>
+<li class="has-submenu">
+    <a href="javascript:void()" class="has-arrow mm-collapsed">
+        <i class="location-icon fas fa-map-marker-alt"></i>
+        <span class="nav-label">Location</span>
+    </a>
+    <ul class="list-unstyled mm-collapse">
+        <li>
+            <a href="javascript:void(0)" data-toggle="modal" data-target="#addLocationModal">Add Location</a>
+        </li>
+        <li>
+            <a href="javascript:void(0)" data-toggle="modal" data-target="#updateLocationModal">Update Location</a>
+        </li>
+        <li>
+            <a href="javascript:void(0)" data-toggle="modal" data-target="#removeLocationModal">Remove Location</a>
+        </li>
+        <li><a href="javascript:void(0)" id="toggleLocationDetails">Location Details</a></li>
+
+    </ul>
+</li>
+
+                            <li class="has-submenu">
+                                <a href="javascript:void()" class="has-arrow mm-collapsed">
+                                    <i class="door-icon fas fa-door-open"></i>
+                                    <span class="nav-label">Room</span>
+                                </a>
+                                <ul class="list-unstyled mm-collapse">
+                                    <li>
+                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#addRoomModal">Add Room</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#updateRoomModal">Update Room</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#removeRoomModal">Remove Room</a>
+                                    </li>
+                                    <li><a href="room_details.html">Room Details</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="#" class="has-arrow mm-collapsed">
+                                    <i class="fa fa-bed"></i>
+                                    <span class="nav-label">Bed</span>
+                                </a>
+                                <ul class="list-unstyled mm-collapse">
+                                    <li>
+                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#addBedModal">Add Bed</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#updateBedModal">Update Bed</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#removeBedModal">Remove Bed</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#removeBedModal">Bed Details</a>
+                                    </li>
+                                </ul>
+                            </li>
+</nav>
+<div class="sidebar-widgets">
+    <div class="top-sidebar box-shadow mx-25 m-b-30 p-b-20 text-center">
+        <a href="new-appointment.html">
+            <img src="assets/images/appointement.svg" class="side-img" alt="img">
+        </a>
+
+    </div>
+    <div class="copyright text-center">
+        <p class="mb-0"> Doctor Dashboard</p>
+        <p class="mb-0"> © 2024 </p>
+    </div>
+</div>
+</aside>
+<!-- End section sidebar -->
+ <!-- start logo components -->
+ <div class="nav-header">
+    <div class="brand-logo">
+        <a href="index.html"> <img class="logo-tabib" src="assets/images/download.png" alt=""></a>
+        <a href="index.html"><img class="brand-title" src="#a" alt=""></a>
+    </div>
+</div>
+<!-- End logo components -->
+
+
+<!-- start section header -->
+<div class="header">
+    <header class="top-head container-fluid">
+        <div class="nav-control">
+            <div class="hamburger">
+                <span class="line"></span><span class="line"></span><span class="line"></span>
+            </div>
+
+        </div>
+        <div class="header-right">
+            <div class="fullscreen notification_dropdown widget-5">
+                <div class="full">
+                    <a class="text-dark" href="#!" onclick="javascript:toggleFullScreen()">
+                        <i class="fas fa-expand"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="widget-6">
+                <div class="cart-wrapper">
+                    <div class="cart-icon">
+                        <a class="cart-control" href="#">
+                            <i class="fas fa-bell"></i>
+                            <div class="pulse-css"></div>
+                        </a>
+                    </div>
+                    
+            </div>
+            <div class="my-account-wrapper widget-7">
+                <div class="account-wrapper">
+                    <div class="account-control">
+                        <a class="login header-profile" href="#" title="Sign in">
+                            <div class="header-info">
+                                <span>Maya</span>
+                                <small>Admin</small>
+                            </div>
+                            <img src="assets/images/avtar/admin.jpg" alt="people">
+                        </a>
+                        <div class="account-dropdown-form dropdown-container">
+                            <div class="form-content">
+                                <a href="doctor-settings.html">
+                                    <i class="far fa-user"></i>
+                                    <span class="ml-2">Profile</span>
+                                </a>
+                                <a href="#">
+                                    <i class="far fa-envelope"></i>
+                                    <span class="ml-2">Inbox</span>
+                                </a>
+                                <a href="page-login.html">
+                                    <i class="fas fa-sign-in-alt"></i>
+                                    <span class="ml-2">Logout </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+<!-- End section header -->
+
+
+<!-- start section content -->
+        <!-- start section content -->
+        
+        <div class="content-body">
+            <div class="warper container-fluid">
+                <!-- <div class="row page-titles mx-0">
+                    <div class="col-lg-12 p-md-0">
+                        <h4 class="text-primary"># <span class="names">#</span></h4>
+                        <p class="mb-0">#</p>
+                    </div>
+                </div> -->
+                <div id="main-content">
+                <div class="new-patients main_container">
+                    <div class="row">
+                        <div class="col-sm-6 col-xl-3 col-lg-6">
+                            <div class="widget card card-primary bg-card1">
+                                <div class="card-body">
+                                    <div class="media text-center">
+                                        <span>
+                                            <i class="fas fa-user-md fa-2x"></i>
+                                        </span>
+                                        <div class="media-body">
+                                            <span class="text-white">Total Doctor</span>
+                                            <h3 class="mb-0 text-white">300</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3 col-lg-6">
+                            <div class="widget card card-danger bg-card2">
+                                <div class="card-body">
+                                    <div class="media text-center">
+                                        <span>
+                                            <i class="fas fa-user-nurse fa-2x"></i>
+                                        </span>
+                                        <div class="media-body">
+                                            <span class="text-white">Total Nurse</span>
+                                            <h3 class="mb-0 text-white">50</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3 col-lg-6">
+                            <div class="widget card card-primary bg-card3">
+                                <div class="card-body">
+                                    <div class="media text-center">
+                                        <span>
+                                            <i class="fas fa-user-tie fa-2x"></i>
+                                        </span>
+                                        <div class="media-body">
+                                            <span class="text-white">Total Staff</span>
+                                            <h3 class="mb-0 text-white">45</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3 col-lg-6">
+                            <div class="widget card card-primary bg-card4">
+                                <div class="card-body">
+                                    <div class="media text-center">
+                                        <span>
+                                            <i class="icon fas fa-hospital fa-2x"></i>
+                                        </span>
+                                        <div class="media-body">
+                                            <span class="text-white">Total Departments</span>
+                                            <h3 class="mb-0 text-white">65</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card shadow">
+                                <div class="card-header">
+                                    <h4 class="card-title">Doctor's List</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table id="example1" class="display nowrap">
+                                            <thead>
+                                                <tr>
+                                                    <th>Time</th>
+                                                    <th>Date</th>
+                                                    <th>Patient</th>
+                                                    <th>Phone</th>
+                                                    <th>Status</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="patientTableBody">
+                                                <!-- Rows will be added here by JavaScript -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- End section content -->
+<!-- End section content -->
+
+
+        <!-- start section footer -->
+        <div class="footer">
+            <div class="copyright">
+                <p class="mb-0">Copyright © Designed &amp; Developed by <a href="msu.edu.in" target="_blank">MSU</a> 2024
+                </p>
+            </div>
+        </div>
+        <!-- End section footer -->
+    
+        <!-- Add Department Modal -->
+        <div class="modal fade" id="addDepartmentModal" tabindex="-1" role="dialog" aria-labelledby="addDepartmentModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addDepartmentModalTitle">Add Department</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Form for Adding Department -->
+                        <form id="addDepartmentForm" action="http://localhost:8080/api/add-department" method="POST" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="departmentName">Department Name</label>
+                                <input type="text" class="form-control" id="departmentName" name="departmentName" placeholder="Enter department name" required>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer text-center d-flex justify-content-center">
+                        <!-- Submit button triggers form submission -->
+                        <button type="submit" form="addDepartmentForm" class="btn btn-primary">Add Department</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Add Location Modal -->
+<div class="modal fade" id="addLocationModal" tabindex="-1" role="dialog" aria-labelledby="addLocationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addLocationModalLabel">Add Location</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addLocationForm">
+                    <!-- Department Dropdown (Populated dynamically) -->
+                    <div class="form-group">
+                        <label for="departmentDropdown">Select Department</label>
+                        <select id="departmentDropdown" name="department_id" class="form-control" required>
+                            <option value="">Select Department</option> <!-- Default option -->
+                            <!-- Department options will be added here dynamically -->
+                        </select>
+                    </div>
+                    <!-- Static Location Dropdown -->
+                    <div class="form-group">
+                        <label for="locationDropdown">Select Location</label>
+                        <select id="locationDropdown" name="location_name" class="form-control" required>
+                            <option value="">Select Location</option> <!-- Default option -->
+                            <option value="Ground Floor">Ground Floor</option>
+                            <option value="First Floor">First Floor</option>
+                            <option value="Second Floor">Second Floor</option>
+                            <option value="Third Floor">Third Floor</option>
+                            <option value="Fourth Floor">Fourth Floor</option>
+                            <option value="Fifth Floor">Fifth Floor</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer text-center d-flex justify-content-center">
+                <button type="submit" form="addLocationForm" class="btn btn-primary">Add Location</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add Room Modal -->
+<div class="modal fade" id="addRoomModal" tabindex="-1" role="dialog" aria-labelledby="addRoomModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addRoomModalLabel">Add Room</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addRoomForm">
+                    <div class="form-group">
+                        <label for="roomNumber">Room Number</label>
+                        <input type="text" class="form-control" id="roomNumber" placeholder="Enter room number" required>
+                    </div>
+                    <!-- Static Room Type Dropdown -->
+                    <div class="form-group">
+                        <label for="roomType">Room Type</label>
+                        <select class="form-control" id="roomType" required>
+                            <option value="">Select Room Type</option>
+                            <option value="Male Ward">Male Ward</option>
+                            <option value="Female Ward">Female Ward</option>
+                            <option value="Private Room">Private Room</option>
+                            <option value="Surgery Room">Surgery Room</option>
+                        </select>
+                    </div>
+                    <!-- Department Dropdown (Populated dynamically) -->
+                    <div class="form-group">
+                        <label for="roomDepartment">Department</label>
+                        <select class="form-control" id="roomDepartment" required>
+                            <option value="">Select Department</option> <!-- Default option -->
+                            <!-- Department options will be added here dynamically -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="roomCapacity">Capacity</label>
+                        <input type="number" class="form-control" id="roomCapacity" placeholder="Enter room capacity" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="submit" form="addRoomForm" class="btn btn-primary">Add Room</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Add Bed Modal -->
+<div class="modal fade" id="addBedModal" tabindex="-1" role="dialog" aria-labelledby="addBedModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addBedModalLabel">Add Bed</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addBedForm">
+                    <div class="form-group">
+                        <label for="roomSelection">Room</label>
+                        <select class="form-control" id="roomSelection">
+                            <!-- Options will be dynamically loaded from the backend -->
+                            <option value="" disabled selected>Select room</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="bedName">Bed Name</label>
+                        <input type="text" class="form-control" id="bedName" placeholder="Enter bed name" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="button" class="btn btn-primary" onclick="submitAddBedForm()">Add Bed</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Department Details Section -->
+<div class="content-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel card shadow-lg p-4" id="departmentDetailsPanel" style="width: 90%; margin-left:17%">
+                    <div class="panel-heading mb-3">
+                        <h4 class="title text-center text-primary">Department <span>Details</span></h4>
+                    </div>
+                    <div class="panel-body table-responsive" id="departmentDetailsSection">
+                        <table class="table table-hover table-striped table-bordered">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Sl</th>
+                                    <th class="text-center">Department ID</th>
+                                    <th class="text-center">Department Name</th>
+                                </tr>
+                            </thead>
+                            <tbody id="departmentTableBody">
+                                <!-- Rows will be dynamically inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="panel-footer mt-4" id="paginationInfo" style="display: none;">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="pagination-info text-left">
+                                    <!-- Pagination info will be updated here -->
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="pagination justify-content-end">
+                                    <!-- Pagination controls will be dynamically inserted here -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel card shadow-lg p-4" id="locationDetailsPanel" style="width: 90%; margin-left:17%">
+                    <div class="panel-heading mb-3">
+                        <h4 class="title text-center text-primary">Location <span>Details</span></h4>
+                    </div>
+                    <div class="panel-body table-responsive" id="locationDetailsSection">
+                        <table class="table table-hover table-striped table-bordered">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Sl No</th>
+                                    <th class="text-center">Location ID</th>
+                                    <th class="text-center">Location Name</th>
+                                    <th class="text-center">Department Name</th>
+                                </tr>
+                            </thead>
+                            <tbody id="locationTableBody">
+                                <!-- Rows will be dynamically inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="panel-footer mt-4" id="locationPaginationInfo" style="display: none;">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="pagination-info text-left"></div>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="pagination justify-content-end" id="locationPagination">
+                                    <!-- Pagination controls will be dynamically inserted here -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- End Content Section -->
+
+
+
+//<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Additional JS Libraries -->
+<script src="assets/plugins/jquery/jquery.min.js"></script>
+<script src="assets/plugins/popper/popper.min.js"></script>
+<script src="assets/plugins/bootstrap/js/bootstrap.js"></script>
+<script src="assets/plugins/moment/moment.min.js"></script>
+<script src="assets/plugins/daterangepicker/daterangepicker.min.js"></script>
+<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="assets/js/init-tdatatable.js"></script>
+<script src="assets/plugins/chart/chart/Chart.min.js"></script>
+<script src="assets/js/charts-custom.js"></script>
+<script src="assets/js/toggleFullScreen.js"></script>
+<script src="assets/js/main.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const rowsPerPage = 3;
+    const departmentTableBody = document.getElementById('departmentTableBody');
+    const pagination = document.querySelector('.pagination');
+    const departmentDetailsPanel = document.getElementById('departmentDetailsPanel');
+    const departmentDetailsSection = document.getElementById('departmentDetailsSection');
+    const paginationInfo = document.getElementById('paginationInfo');
+    const toggleDepartmentDetailsButton = document.getElementById('toggleDepartmentDetails');
+    const doctorList = document.querySelector('.card.shadow');
+    const mainContent = document.querySelector('.new-patients.main_container');
+    const footer = document.querySelector('.footer');
+    
+    let currentPage = 1;
+    let fetchedData = [];
+    let currentLocationPage = 1;
+    let fetchedLocationData = [];
+
+
+    function toggleLocationDetails() {
+    const locationDetailsPanel = document.getElementById('locationDetailsPanel');
+    const departmentDetailsPanel = document.getElementById('departmentDetailsPanel');
+    const mainContent = document.querySelector('.new-patients.main_container');
+    const footer = document.querySelector('.footer');
+    
+    if (locationDetailsPanel.style.display === 'none' || locationDetailsPanel.style.display === '') {
+        // Show location details, hide other content
+        locationDetailsPanel.style.display = 'block';
+        departmentDetailsPanel.style.display = 'none';
+        mainContent.style.display = 'none';
+        footer.style.display = 'none';
+        
+        // Fetch location details only once
+        fetchLocations();
+    } else {
+        locationDetailsPanel.style.display = 'none';
+        mainContent.style.display = 'block';
+        footer.style.display = 'block';
+    }
+}
+
+    // Function to fetch department data and update the table
+    function fetchDepartments() {
+        fetch('http://localhost:8080/api/departments')
+            .then(response => response.json())
+            .then(data => {
+                fetchedData = data;
+                renderTable(currentPage);
+            })
+            .catch(error => {
+                console.error('Error fetching department details:', error);
+                alert('Failed to load department details. Please try again later.');
+            });
+    }
+
+    // Function to render department table for pagination
+    function renderTable(page) {
+        departmentTableBody.innerHTML = '';
+        const start = (page - 1) * rowsPerPage;
+        const end = page * rowsPerPage;
+        const pageRows = fetchedData.slice(start, end);
+
+        pageRows.forEach((department, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${start + index + 1}</td>
+                <td>${department.department_id}</td>
+                <td>${department.department_name}</td>
+            `;
+            departmentTableBody.appendChild(row);
+        });
+
+        updatePagination();
+        updatePaginationInfo();
+    }
+
+    // Function to update department pagination
+    function updatePagination() {
+        const totalPages = Math.ceil(fetchedData.length / rowsPerPage);
+        pagination.innerHTML = '';
+
+        const createPageItem = (page, text) => {
+            const li = document.createElement('li');
+            li.className = 'page-item' + (page === currentPage ? ' active' : '');
+            const a = document.createElement('a');
+            a.className = 'page-link';
+            a.href = '#';
+            a.textContent = text;
+            a.addEventListener('click', (e) => {
+                e.preventDefault();
+                currentPage = page;
+                renderTable(currentPage);
+            });
+            li.appendChild(a);
+            return li;
+        };
+
+        if (currentPage > 1) {
+            pagination.appendChild(createPageItem(currentPage - 1, '«'));
+        }
+
+        for (let i = 1; i <= totalPages; i++) {
+            pagination.appendChild(createPageItem(i, i));
+        }
+
+        if (currentPage < totalPages) {
+            pagination.appendChild(createPageItem(currentPage + 1, '»'));
+        }
+    }
+
+    // Function to update pagination info
+    function updatePaginationInfo() {
+        const totalEntries = fetchedData.length;
+        const startEntry = (currentPage - 1) * rowsPerPage + 1;
+        const endEntry = Math.min(currentPage * rowsPerPage, totalEntries);
+        paginationInfo.querySelector('.col-sm-6').innerHTML = `Showing <b>${startEntry} - ${endEntry}</b> out of <b>${totalEntries}</b> entries`;
+    }
+
+    // Toggle department details and hide main content
+    function toggleDepartmentDetails() {
+        if (departmentDetailsPanel.style.display === 'none' || departmentDetailsPanel.style.display === '') {
+            departmentDetailsPanel.style.display = 'block';
+            departmentDetailsSection.style.display = 'block';
+            paginationInfo.style.display = 'block';
+
+            doctorList.style.display = 'none';
+            mainContent.style.display = 'none';
+            footer.style.display = 'none';
+            fetchDepartments();
+        } else {
+            departmentDetailsPanel.style.display = 'none';
+            departmentDetailsSection.style.display = 'none';
+            paginationInfo.style.display = 'none';
+
+            doctorList.style.display = 'block';
+            mainContent.style.display = 'block';
+            footer.style.display = 'block';
+        }
+    }
+
+    toggleDepartmentDetailsButton.addEventListener('click', toggleDepartmentDetails);
+
+    // Fetch location data and update the location table
+    function fetchLocations() {
+        fetch('http://localhost:8080/api/locations')
+            .then(response => response.json())
+            .then(data => {
+                fetchedLocationData = data;
+                renderLocationTable(currentLocationPage);
+            })
+            .catch(error => {
+                console.error('Error fetching location details:', error);
+                alert('Failed to load location details. Please try again later.');
+            });
+    }
+
+    // Render the Location table for pagination
+    function renderLocationTable(page) {
+        locationTableBody.innerHTML = '';
+        const start = (page - 1) * rowsPerPage;
+        const end = page * rowsPerPage;
+        const pageRows = fetchedLocationData.slice(start, end);
+
+        pageRows.forEach((location, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${start + index + 1}</td>
+                <td>${location.location_id}</td>
+                <td>${location.location_name}</td>
+                <td>${location.department_name}</td>
+            `;
+            locationTableBody.appendChild(row);
+        });
+
+        updateLocationPagination();
+        updateLocationPaginationInfo();
+    }
+
+    // Function to update pagination for the Location table
+    function updateLocationPagination() {
+        const totalPages = Math.ceil(fetchedLocationData.length / rowsPerPage);
+        locationPagination.innerHTML = '';
+
+        const createPageItem = (page, text) => {
+            const li = document.createElement('li');
+            li.className = 'page-item' + (page === currentLocationPage ? ' active' : '');
+            const a = document.createElement('a');
+            a.className = 'page-link';
+            a.href = '#';
+            a.textContent = text;
+            a.addEventListener('click', (e) => {
+                e.preventDefault();
+                currentLocationPage = page;
+                renderLocationTable(currentLocationPage);
+            });
+            li.appendChild(a);
+            return li;
+        };
+
+        if (currentLocationPage > 1) {
+            locationPagination.appendChild(createPageItem(currentLocationPage - 1, '«'));
+        }
+
+        for (let i = 1; i <= totalPages; i++) {
+            locationPagination.appendChild(createPageItem(i, i));
+        }
+
+        if (currentLocationPage < totalPages) {
+            locationPagination.appendChild(createPageItem(currentLocationPage + 1, '»'));
+        }
+    }
+
+    // Function to update pagination info for Location table
+    function updateLocationPaginationInfo() {
+        const totalEntries = fetchedLocationData.length;
+        const startEntry = (currentLocationPage - 1) * rowsPerPage + 1;
+        const endEntry = Math.min(currentLocationPage * rowsPerPage, totalEntries);
+        locationPaginationInfo.querySelector('.pagination-info').innerHTML = `Showing <b>${startEntry} - ${endEntry}</b> out of <b>${totalEntries}</b> entries`;
+    }
+
+    // Toggle Location Details and hide other content
+    function toggleLocationDetails() {
+        if (locationDetailsPanel.style.display === 'none' || locationDetailsPanel.style.display === '') {
+            locationDetailsPanel.style.display = 'block';
+            fetchLocations();
+        } else {
+            locationDetailsPanel.style.display = 'none';
+        }
+    }
+
+    const toggleLocationDetailsButton = document.querySelector('#toggleLocationDetails');
+    if (toggleLocationDetailsButton) {
+        toggleLocationDetailsButton.addEventListener('click', toggleLocationDetails);
+    }
+
+    departmentDetailsPanel.style.display = 'none';
+    departmentDetailsSection.style.display = 'none';
+    paginationInfo.style.display = 'none';
+    footer.style.display = 'block';
+});
+
+// Form submission for adding a department
+document.getElementById('addDepartmentForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+    const departmentName = document.getElementById('departmentName').value;
+
+    fetch('http://localhost:8080/api/add-department', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ departmentName })
+    })
+    .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.text();
+    })
+    .then(data => {
+        alert('Department added successfully');
+        document.getElementById('departmentName').value = '';
+        $('#addDepartmentModal').modal('hide');
+        fetchDepartments();
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error adding department. Please try again.');
+    });
+});
+
+// Populate the department dropdown
+function populateDepartmentDropdown() {
+    fetch('http://localhost:8080/api/department-names')
+    .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.json();
+    })
+    .then(departmentData => {
+        const dropdown = document.getElementById('departmentDropdown');
+        dropdown.innerHTML = '<option value="">Select Department</option>';
+        departmentData.forEach(department => {
+            const option = document.createElement('option');
+            option.text = department.department_name;
+            option.value = department.department_id;
+            dropdown.add(option);
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching department names:', error);
+        alert('Failed to load department names.');
+    });
+}
+$('#addLocationModal').on('shown.bs.modal', function () {
+    populateDepartmentDropdown();
+});
+
+
+// Call the function when the document is ready
+document.addEventListener('DOMContentLoaded', populateDepartmentDropdown);
+
+// Form submission for adding a location
+document.getElementById('addLocationForm').addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    const department_id = document.getElementById('departmentDropdown').value;
+    const location_name = document.getElementById('locationDropdown').value;
+
+    if (!department_id || !location_name) {
+        alert('Please select both department and location.');
+        return;
+    }
+
+    const formData = { department_id, location_name };
+
+    try {
+        const response = await fetch('http://localhost:8080/api/add-location', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        });
+
+        if (response.ok) {
+            alert('Location added successfully!');
+            document.getElementById('addLocationForm').reset();
+        } else {
+            const errorMessage = await response.text();
+            alert(`Error: ${errorMessage}`);
+        }
+    } catch (error) {
+        console.error('Error occurred while adding location:', error);
+        alert('An error occurred while adding the location. Please try again later.');
+    }
+});
+
+// Populate department dropdown (similar to add location)
+function populateRoomDepartmentDropdown() {
+    fetch('http://localhost:8080/api/department-names') // Replace with your API endpoint
+        .then(response => response.json())
+        .then(data => {
+            const departmentDropdown = document.getElementById('roomDepartment');
+            departmentDropdown.innerHTML = '<option value="">Select Department</option>'; // Reset dropdown
+            data.forEach(department => {
+                const option = document.createElement('option');
+                option.value = department.department_id;
+                option.textContent = department.department_name;
+                departmentDropdown.appendChild(option);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching department names:', error);
+            alert('Failed to load departments.');
+        });
+}
+
+// Call populate function when modal is shown
+$('#addRoomModal').on('shown.bs.modal', function () {
+    populateRoomDepartmentDropdown();
+});
+
+// Form submission for adding room
+document.getElementById('addRoomForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const roomNumber = document.getElementById('roomNumber').value;
+    const roomType = document.getElementById('roomType').value;
+    const departmentId = document.getElementById('roomDepartment').value;
+    const roomCapacity = document.getElementById('roomCapacity').value;
+
+    if (!roomNumber || !roomType || !departmentId || !roomCapacity) {
+        alert('Please fill in all required fields.');
+        return;
+    }
+
+    const formData = {
+        roomNumber,
+        roomType,
+        departmentId,
+        roomCapacity
+    };
+
+    fetch('http://localhost:8080/api/add-room', { // Replace with your API endpoint
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Room added successfully!');
+            $('#addRoomModal').modal('hide'); // Close the modal
+            document.getElementById('addRoomForm').reset(); // Reset form fields
+        } else {
+            alert('Error adding room: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error adding room:', error);
+        alert('An error occurred while adding the room.');
+    });
+});
+
+
+
+</script>
+
+</body>
+</html>

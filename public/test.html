@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Admin Dashboard">
+    <title>NeuroCare</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Base Styling -->
+    <link rel="stylesheet" href="assets/main/css/fonts.css">
+    <link rel="stylesheet" href="assets/main/css/style.css">
+</head>
+
+<body>
+    <div id="main-wrapper" class="show">
+        <!-- Start Sidebar Section -->
+        <aside class="left-panel nicescroll-box">
+            <nav class="navigation">
+                <!-- Sidebar Menu -->
+                <ul class="list-unstyled main-menu">
+                    <li class="has-submenu">
+                        <a href="javascript:void(0)" class="has-arrow mm-collapsed">
+                            <i class="icon fas fa-hospital"></i>
+                            <span class="nav-label">Department</span>
+                        </a>
+                        <ul class="list-unstyled mm-collapse">
+                            <li><a href="javascript:void(0)" data-toggle="modal" data-target="#addDepartmentModal">Add Department</a></li>
+                            <li><a href="javascript:void(0)" data-toggle="modal" data-target="#updateDepartmentModal">Update Department</a></li>
+                            <li><a href="javascript:void(0)" data-toggle="modal" data-target="#removeDepartmentModal">Remove Department</a></li>
+                            <li><a href="javascript:void(0)" id="toggleDepartmentDetails">Department Details</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-widgets">
+                <div class="top-sidebar box-shadow mx-25 m-b-30 p-b-20 text-center">
+                    <a href="new-appointment.html">
+                        <img src="assets/images/appointement.svg" class="side-img" alt="img">
+                    </a>
+                </div>
+                <div class="copyright text-center">
+                    <p class="mb-0">Doctor Dashboard</p>
+                    <p class="mb-0">© 2024</p>
+                </div>
+            </div>
+        </aside>
+        <!-- End Sidebar Section -->
+
+        <!-- Start Header Section -->
+        <div class="header">
+            <header class="top-head container-fluid">
+                <!-- Navigation Controls -->
+                <!-- Add your header content here -->
+            </header>
+        </div>
+        <!-- End Header Section -->
+
+        <!-- Start Content Section -->
+        <div class="content-body">
+            <div class="warper container-fluid">
+                <!-- Main Content -->
+                <div id="main-content-area">
+                    <!-- Department Details Section -->
+                    <div class="content-wrapper">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="panel" id="departmentDetailsPanel" style="display: none;">
+                                        <div class="panel-heading">
+                                            <h4 class="title">Department <span>Details</span></h4>
+                                        </div>
+                                        <div class="panel-body table-responsive" id="departmentDetailsSection" style="display: none;">
+                                            <table class="table table-striped table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th>Department ID</th>
+                                                        <th>Department Name</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <!-- Example data -->
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>D01</td>
+                                                        <td>Cardiology</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>D02</td>
+                                                        <td>Neurology</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>D03</td>
+                                                        <td>Orthopedics</td>
+                                                    </tr>
+                                                    <!-- Add more rows as needed -->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="panel-footer" id="paginationInfo" style="display: none;">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <!-- Pagination info will be updated here -->
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <ul class="pagination">
+                                                        <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">»</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Content Section -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Start Footer Section -->
+        <div class="footer">
+            <div class="copyright">
+                <p class="mb-0">Copyright © Designed & Developed by <a href="msu.edu.in" target="_blank">MSU</a> 2024</p>
+            </div>
+        </div>
+        <!-- End Footer Section -->
+
+        <!-- Add Department Modal -->
+        <div class="modal fade" id="addDepartmentModal" tabindex="-1" role="dialog" aria-labelledby="addDepartmentModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addDepartmentModalTitle">Add Department</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Form for Adding Department -->
+                        <form id="addDepartmentForm" action="http://localhost:7075/api/add-department" method="POST" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="departmentName">Department Name</label>
+                                <input type="text" class="form-control" id="departmentName" name="departmentName" placeholder="Enter department name" required>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer text-center d-flex justify-content-center">
+                        <!-- Submit button triggers form submission -->
+                        <button type="submit" form="addDepartmentForm" class="btn btn-primary">Add Department</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Department Added Modal -->
+        <div class="modal fade" id="departmentAddedModal" tabindex="-1" role="dialog" aria-labelledby="departmentAddedModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="departmentAddedModalTitle">Department Added</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="departmentDetails"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Additional JS Libraries -->
+    <script src="assets/plugins/jquery/jquery.min.js"></script>
+    <script src="assets/plugins/popper/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.js"></script>
+    <script src="assets/plugins/moment/moment.min.js"></script>
+    <script src="assets/plugins/daterangepicker/daterangepicker.min.js"></script>
+    <script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/js/init-tdatatable.js"></script>
+    <script src="assets/plugins/chart/chart/Chart.min.js"></script>
+    <script src="assets/js/charts-custom.js"></script>
+    <script src="assets/js/toggleFullScreen.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Custom JavaScript for Pagination and Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const rowsPerPage = 3;
+    const tableBody = document.querySelector('.panel-body tbody');
+    const pagination = document.querySelector('.pagination');
+    const departmentDetailsPanel = document.getElementById('departmentDetailsPanel');
+    const departmentDetailsSection = document.getElementById('departmentDetailsSection');
+    const paginationInfo = document.getElementById('paginationInfo');
+    const toggleButton = document.getElementById('toggleDepartmentDetails');
+
+    let currentPage = 1;
+    const rows = Array.from(tableBody.querySelectorAll('tr'));
+
+    function renderTable(page) {
+        tableBody.innerHTML = '';
+        const start = (page - 1) * rowsPerPage;
+        const end = page * rowsPerPage;
+        const pageRows = rows.slice(start, end);
+
+        pageRows.forEach(row => {
+            tableBody.appendChild(row);
+        });
+
+        updatePagination();
+        updatePaginationInfo();
+    }
+
+    function updatePagination() {
+        const totalPages = Math.ceil(rows.length / rowsPerPage);
+        pagination.innerHTML = '';
+
+        const createPageItem = (page, text) => {
+            const li = document.createElement('li');
+            li.className = 'page-item' + (page === currentPage ? ' active' : '');
+            const a = document.createElement('a');
+            a.className = 'page-link';
+            a.href = '#';
+            a.textContent = text;
+            a.addEventListener('click', (e) => {
+                e.preventDefault();
+                currentPage = page;
+                renderTable(currentPage);
+            });
+            li.appendChild(a);
+            return li;
+        };
+
+        pagination.appendChild(createPageItem(1, '«'));
+
+        for (let i = 1; i <= totalPages; i++) {
+            pagination.appendChild(createPageItem(i, i));
+        }
+
+        pagination.appendChild(createPageItem(totalPages, '»'));
+    }
+
+    function updatePaginationInfo() {
+        const totalEntries = rows.length;
+        const startEntry = (currentPage - 1) * rowsPerPage + 1;
+        const endEntry = Math.min(currentPage * rowsPerPage, totalEntries);
+        paginationInfo.querySelector('.col-sm-6').innerHTML =`Showing <b>${endEntry - startEntry + 1}</b> out of <b>${totalEntries}</b> entries`;
+
+    }
+
+    function toggleDepartmentDetails() {
+        if (departmentDetailsPanel.style.display === 'none') {
+            departmentDetailsPanel.style.display = 'block';
+            departmentDetailsSection.style.display = 'block'; // Show table when details panel is shown
+            paginationInfo.style.display = 'block'; // Show pagination info
+            renderTable(currentPage); // Render table when shown
+        } else {
+            departmentDetailsPanel.style.display = 'none';
+            departmentDetailsSection.style.display = 'none'; // Hide table when details panel is hidden
+            paginationInfo.style.display = 'none'; // Hide pagination info
+        }
+    }
+
+    toggleButton.addEventListener('click', toggleDepartmentDetails);
+
+    // Initial state
+    departmentDetailsPanel.style.display = 'none';
+    departmentDetailsSection.style.display = 'none'; // Initially hide table
+    paginationInfo.style.display = 'none'; // Initially hide pagination info
+});
+    </script>
+</body>
+</html>

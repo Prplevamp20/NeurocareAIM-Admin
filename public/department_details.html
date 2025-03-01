@@ -1,0 +1,309 @@
+
+document.addEventListener('DOMContentLoaded', function () {
+    const rowsPerPage = 3;
+    const departmentTableBody = document.getElementById('departmentTableBody');
+    const pagination = document.querySelector('.pagination');
+    const departmentDetailsPanel = document.getElementById('departmentDetailsPanel');
+    const departmentDetailsSection = document.getElementById('departmentDetailsSection');
+    const paginationInfo = document.getElementById('paginationInfo');
+    const toggleDepartmentDetailsButton = document.getElementById('toggleDepartmentDetails');
+    const doctorList = document.querySelector('.card.shadow');
+    const mainContent = document.querySelector('.new-patients.main_container');
+    const footer = document.querySelector('.footer');
+    const locationTableBody = document.getElementById('locationTableBody'); 
+    const locationPagination = document.querySelector('#locationPagination');
+    const locationDetailsPanel = document.getElementById('locationDetailsPanel');
+    const locationPaginationInfo = document.getElementById('locationPaginationInfo');
+    
+    let currentPage = 1;
+    let fetchedData = [];
+    let currentLocationPage = 1;
+    let fetchedLocationData = [];
+
+    // Function to fetch department data and update the table
+    function fetchDepartments() {
+        fetch('http://localhost:8080/api/departments')
+            .then(response => response.json())
+            .then(data => {
+                fetchedData = data;
+                renderTable(currentPage);
+            })
+            .catch(error => {
+                console.error('Error fetching department details:', error);
+                alert('Failed to load department details. Please try again later.');
+            });
+    }
+
+    // Function to render department table for pagination
+    function renderTable(page) {
+        departmentTableBody.innerHTML = '';
+        const start = (page - 1) * rowsPerPage;
+        const end = page * rowsPerPage;
+        const pageRows = fetchedData.slice(start, end);
+
+        pageRows.forEach((department, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${start + index + 1}</td>
+                <td>${department.department_id}</td>
+                <td>${department.department_name}</td>
+            `;
+            departmentTableBody.appendChild(row);
+        });
+
+        updatePagination();
+        updatePaginationInfo();
+    }
+
+    // Function to update department pagination
+    function updatePagination() {
+        const totalPages = Math.ceil(fetchedData.length / rowsPerPage);
+        pagination.innerHTML = '';
+
+        const createPageItem = (page, text) => {
+            const li = document.createElement('li');
+            li.className = 'page-item' + (page === currentPage ? ' active' : '');
+            const a = document.createElement('a');
+            a.className = 'page-link';
+            a.href = '#';
+            a.textContent = text;
+            a.addEventListener('click', (e) => {
+                e.preventDefault();
+                currentPage = page;
+                renderTable(currentPage);
+            });
+            li.appendChild(a);
+            return li;
+        };
+
+        if (currentPage > 1) {
+            pagination.appendChild(createPageItem(currentPage - 1, '«'));
+        }
+
+        for (let i = 1; i <= totalPages; i++) {
+            pagination.appendChild(createPageItem(i, i));
+        }
+
+        if (currentPage < totalPages) {
+            pagination.appendChild(createPageItem(currentPage + 1, '»'));
+        }
+    }
+
+    // Function to update pagination info
+    function updatePaginationInfo() {
+        const totalEntries = fetchedData.length;
+        const startEntry = (currentPage - 1) * rowsPerPage + 1;
+        const endEntry = Math.min(currentPage * rowsPerPage, totalEntries);
+        paginationInfo.querySelector('.col-sm-6').innerHTML = `Showing <b>${startEntry} - ${endEntry}</b> out of <b>${totalEntries}</b> entries`;
+    }
+
+    // Toggle department details and hide main content
+    function toggleDepartmentDetails() {
+        if (departmentDetailsPanel.style.display === 'none' || departmentDetailsPanel.style.display === '') {
+            departmentDetailsPanel.style.display = 'block';
+            departmentDetailsSection.style.display = 'block';
+            paginationInfo.style.display = 'block';
+
+            doctorList.style.display = 'none';
+            mainContent.style.display = 'none';
+            footer.style.display = 'none';
+            fetchDepartments();
+        } else {
+            departmentDetailsPanel.style.display = 'none';
+            departmentDetailsSection.style.display = 'none';
+            paginationInfo.style.display = 'none';
+
+            doctorList.style.display = 'block';
+            mainContent.style.display = 'block';
+            footer.style.display = 'block';
+        }
+    }
+
+
+    // Fetch location data and update the location table
+    function fetchLocations() {
+        fetch('http://localhost:8080/api/locations')
+            .then(response => response.json())
+            .then(data => {
+                fetchedLocationData = data;
+                renderLocationTable(currentLocationPage);
+            })
+            .catch(error => {
+                console.error('Error fetching location details:', error);
+                alert('Failed to load location details. Please try again later.');
+            });
+    }
+
+    // Render the Location table for pagination
+    function renderLocationTable(page) {
+        locationTableBody.innerHTML = '';
+        const start = (page - 1) * rowsPerPage;
+        const end = page * rowsPerPage;
+        const pageRows = fetchedLocationData.slice(start, end);
+
+        pageRows.forEach((location, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${start + index + 1}</td>
+                <td>${location.location_id}</td>
+                <td>${location.location_name}</td>
+                <td>${location.department_name}</td>
+            `;
+            locationTableBody.appendChild(row);
+        });
+
+        updateLocationPagination();
+        updateLocationPaginationInfo();
+    }
+
+    // Function to update pagination for the Location table
+    function updateLocationPagination() {
+        const totalPages = Math.ceil(fetchedLocationData.length / rowsPerPage);
+        locationPagination.innerHTML = '';
+
+        const createPageItem = (page, text) => {
+            const li = document.createElement('li');
+            li.className = 'page-item' + (page === currentLocationPage ? ' active' : '');
+            const a = document.createElement('a');
+            a.className = 'page-link';
+            a.href = '#';
+            a.textContent = text;
+            a.addEventListener('click', (e) => {
+                e.preventDefault();
+                currentLocationPage = page;
+                renderLocationTable(currentLocationPage);
+            });
+            li.appendChild(a);
+            return li;
+        };
+
+        if (currentLocationPage > 1) {
+            locationPagination.appendChild(createPageItem(currentLocationPage - 1, '«'));
+        }
+
+        for (let i = 1; i <= totalPages; i++) {
+            locationPagination.appendChild(createPageItem(i, i));
+        }
+
+        if (currentLocationPage < totalPages) {
+            locationPagination.appendChild(createPageItem(currentLocationPage + 1, '»'));
+        }
+    }
+
+    // Function to update pagination info for Location table
+    function updateLocationPaginationInfo() {
+        const totalEntries = fetchedLocationData.length;
+        const startEntry = (currentLocationPage - 1) * rowsPerPage + 1;
+        const endEntry = Math.min(currentLocationPage * rowsPerPage, totalEntries);
+        locationPaginationInfo.querySelector('.pagination-info').innerHTML = `Showing <b>${startEntry} - ${endEntry}</b> out of <b>${totalEntries}</b> entries`;
+    }
+
+    // Toggle Location Details and hide other content
+    function toggleLocationDetails() {
+        if (locationDetailsPanel.style.display === 'none' || locationDetailsPanel.style.display === '') {
+            locationDetailsPanel.style.display = 'block';
+            fetchLocations();
+        } else {
+            locationDetailsPanel.style.display = 'none';
+        }
+    }
+
+    const toggleLocationDetailsButton = document.querySelector('#toggleLocationDetails');
+    if (toggleLocationDetailsButton) {
+        toggleLocationDetailsButton.addEventListener('click', toggleLocationDetails);
+    }
+
+    departmentDetailsPanel.style.display = 'none';
+    departmentDetailsSection.style.display = 'none';
+    paginationInfo.style.display = 'none';
+    footer.style.display = 'block';
+});
+
+// Form submission for adding a department
+document.getElementById('addDepartmentForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+    const departmentName = document.getElementById('departmentName').value;
+
+    fetch('http://localhost:8080/api/add-department', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ departmentName })
+    })
+    .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.text();
+    })
+    .then(data => {
+        alert('Department added successfully');
+        document.getElementById('departmentName').value = '';
+        $('#addDepartmentModal').modal('hide');
+        fetchDepartments();
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error adding department. Please try again.');
+    });
+});
+
+// Populate the department dropdown
+function populateDepartmentDropdown() {
+    fetch('http://localhost:8080/api/department-names')
+    .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.json();
+    })
+    .then(departmentData => {
+        const dropdown = document.getElementById('departmentDropdown');
+        dropdown.innerHTML = '<option value="">Select Department</option>';
+        departmentData.forEach(department => {
+            const option = document.createElement('option');
+            option.text = department.department_name;
+            option.value = department.department_id;
+            dropdown.add(option);
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching department names:', error);
+        alert('Failed to load department names.');
+    });
+}
+
+// Call the function when the document is ready
+document.addEventListener('DOMContentLoaded', populateDepartmentDropdown);
+
+// Form submission for adding a location
+document.getElementById('addLocationForm').addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    const department_id = document.getElementById('departmentDropdown').value;
+    const location_name = document.getElementById('locationDropdown').value;
+
+    if (!department_id || !location_name) {
+        alert('Please select both department and location.');
+        return;
+    }
+
+    const formData = { department_id, location_name };
+
+    try {
+        const response = await fetch('http://localhost:8080/api/add-location', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        });
+
+        if (response.ok) {
+            alert('Location added successfully!');
+            document.getElementById('addLocationForm').reset();
+        } else {
+            const errorMessage = await response.text();
+            alert(`Error: ${errorMessage}`);
+        }
+    } catch (error) {
+        console.error('Error occurred while adding location:', error);
+        alert('An error occurred while adding the location. Please try again later.');
+    }
+});
+
+
+

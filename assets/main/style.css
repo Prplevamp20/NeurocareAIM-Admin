@@ -1,0 +1,1979 @@
+/*** uncss> filename: assets/main/css/fonts.css ***/
+/************************** 
+* library files
+***************************/
+
+@import url("../../plugins/bootstrap/css/bootstrap.min.css");
+@import url("../../plugins/daterangepicker/daterangepicker.css");
+@import url("../../plugins/datatables/css/dataTables.bootstrap.min.css");
+/************************** 
+* Fonts Icon
+***************************/
+
+@import url("./../../fonts/fontawesome/css/all.min.css");
+@import url("./../../fonts/simple-line-icons/css/simple-line-icons.css");
+/************************** 
+* Import fonts
+***************************/
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"); 
+/*** uncss> filename: assets/main/css/style.css ***/
+/***************************************************************************************************************
+||||||||||||||||||||||||||||       MASTER STYLESHEET FOR Invest               ||||||||||||||||||||||||||||||||||
+****************************************************************************************************************
+    Project:        Tabib
+    Template URI:   https://themeforest.net/user/uxign/portfolio
+    Description:    This is Admin theme
+    Author:         Uxign
+    Version:        1.1
+    
+||||||||||||||||||||||||||||              TABLE OF CONTENT                  ||||||||||||||||||||||||||||||||||||
+****************************************************************************************************************
+****************************************************************************************************************
+1- General Style
+||||||||||||||||||||||||||||              Typography                        ||||||||||||||||||||||||||||||||||||
+****************************************************************************************************************
+****************************************************************************************************************
+Fonts: "Rubik"
+Fonts: "Roboto"
+Notes:  Google Fonts
+****************************************************************************************************************
+||||||||||||||||||||||||||||            End TABLE OF CONTENT                ||||||||||||||||||||||||||||||||||||
+****************************************************************************************************************/
+
+/************************** 
+* Global - Helpers Folder
+***************************/
+
+/************************** 
+* Generale reset
+***************************/
+
+/************************** 
+* Main Color
+***************************/
+
+/************************** 
+* Main Color
+***************************/
+
+/************************** 
+* Timeline
+***************************/
+
+/*****************************
+Badge
+*****************************/
+
+/************************** 
+* Main Color
+***************************/
+
+/************************** 
+* Border
+***************************/
+
+/************************** 
+* Heading colors
+***************************/
+
+/************************** 
+* Button
+***************************/
+
+/************************** 
+* Top Head
+***************************/
+
+/************************** 
+* Navbar
+***************************/
+
+/*****************************
+Buttons
+*****************************/
+
+/************************** 
+* breadcrumb
+***************************/
+
+/************************** 
+* Crad 
+***************************/
+
+/************************** 
+* Custome classes Bootstrap
+***************************/
+
+/************************** 
+* Calander Pallete 
+***************************/
+
+/************************** 
+* Font-weight
+***************************/
+
+/************************** 
+* Main Fonts
+***************************/
+
+/************************** 
+* shadow variables
+***************************/
+
+/************************** 
+* Heading
+***************************/
+
+/************************** 
+* Heading
+***************************/
+
+/************************** 
+* Modal
+***************************/
+
+/************************** 
+* Float fixing
+***************************/
+
+/************************** 
+* Text Align
+***************************/
+
+/************************** 
+* Transition
+***************************/
+
+.header .top-head .nav-control .hamburger,
+.header .top-head .nav-control .hamburger .line,
+.widget-7 .account-control .account-dropdown-form,
+.widget-7 .account-control .account-dropdown-form:before,
+.widget-7 .account-control:hover .account-dropdown-form {
+    -webkit-transition: all 0.5s ease-in-out !important;
+    -o-transition: all 0.5s ease-in-out !important;
+    transition: all 0.5s ease-in-out !important;
+}
+
+.sidebar-widgets,
+.header,
+.header .top-head,
+.widget-7 .account-control .account-dropdown-form .form-content a,
+.widget-7 .account-control .account-dropdown-form .form-content a:hover,
+.widget-7 .account-control .account-dropdown-form .form-content a:hover span,
+.widget-7 .account-control .account-dropdown-form .form-content a:hover i:before,
+.widget-7 .account-control .account-dropdown-form .form-content a i:before,
+.widget-7 .account-control .account-dropdown-form .form-content a span,
+.nav-header,
+.nav-header .brand-logo .logo-tabib,
+.nav-header .brand-logo .brand-title,
+.nav-header .brand-logo,
+.navigation .main-menu .has-submenu,
+.navigation .main-menu .has-submenu a,
+.navigation .main-menu .has-submenu a i,
+.navigation .main-menu .has-submenu a .nav-label,
+.navigation .main-menu .has-submenu .has-arrow:after,
+.navigation .main-menu .has-submenu .mm-collapse,
+.navigation .main-menu .has-submenu:hover .nav-label,
+.navigation .main-menu .has-submenu:hover i,
+.navigation .main-menu .has-submenu.active,
+.navigation .main-menu .has-submenu.active a,
+.navigation .main-menu .has-submenu.active a .nav-label,
+td span,
+td span:hover,
+.card,
+.left-panel,
+.content-body,
+.footer {
+    -webkit-transition: all .2s ease !important;
+    -o-transition: all .2s ease !important;
+    transition: all .2s ease !important;
+}
+
+/************************** 
+* Button
+***************************/
+
+/************************** 
+* Box Shadow
+***************************/
+
+.shadow,
+.card {
+    -webkit-box-shadow: 0 0 40px rgba(8, 21, 66, 0.05) !important;
+    box-shadow: 0 0 40px rgba(8, 21, 66, 0.05) !important;
+}
+
+.header .top-head,
+.widget-7,
+.widget-7 .account-control .account-dropdown-form .form-content,
+.nav-header,
+.left-panel,
+.footer {
+    -webkit-box-shadow: 0 0 20px rgba(89, 102, 122, 0.1) !important;
+    box-shadow: 0 0 20px rgba(89, 102, 122, 0.1) !important;
+}
+
+/************************** 
+* Box Sizing
+***************************/
+
+/************************** 
+* Padding
+***************************/
+
+/************************** 
+* Boreder None
+***************************/
+
+/************************** 
+*Fonts 
+***************************/
+
+.text-primary {
+    color: #7366ff !important;
+}
+
+/************************** 
+* Media Queries
+***************************/
+
+/************************** 
+* Border radius
+***************************/
+
+/************************** 
+* Transition Delay
+***************************/
+
+/************************** 
+* Text Transform
+***************************/
+
+/************************** 
+* Border T R B L
+***************************/
+
+/************************** 
+* Media Query
+***************************/
+
+/************************** 
+* Generale reset
+***************************/
+
+* {
+    outline: none;
+    padding: 0;
+}
+
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+*::before {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+    height: 100%;
+    position: relative;
+    max-width: 100%;
+    font-size: 14px;
+    background-color: #f8f8f8;
+    color: #2b2b2b;
+}
+
+@media only screen and (max-width: 991px) {
+    body {
+        font-size: 0.875rem;
+    }
+}
+
+/************************** 
+* Heading
+***************************/
+
+h3,
+h4 {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #3d4465;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.125rem;
+}
+
+/************************** 
+* Modal Dialog Scrollable
+***************************/
+
+a {
+    color: #7e7e7e;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none !important;
+}
+
+a:hover {
+    color: #7366ff;
+    text-decoration: none;
+}
+
+a:focus {
+    outline: none;
+}
+
+p {
+    line-height: 1.7;
+    font-size: 13px;
+    letter-spacing: 0.7px;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+small {
+    font-size: 80%;
+    font-weight: 400;
+}
+
+::selection {
+    color: #ffffff;
+    background: #7366ff;
+}
+
+.text-white {
+    color: #ffffff !important;
+}
+
+/******************************** 
+* Margin => padding => Font-size
+*********************************/
+
+.mr-4 {
+    margin-right: 1.5rem !important;
+}
+
+.p-b-20 {
+    padding-bottom: 20px !important;
+}
+
+.mx-25 {
+    margin-left: 25px !important;
+    margin-right: 25px !important;
+}
+
+/************************** 
+* 
+***************************/
+
+/************************** 
+* Border
+***************************/
+
+/************************** 
+* 1. Custom Class
+***************************/
+
+.page-titles {
+    padding: 0.9375rem 1.875rem;
+}
+
+/************************** 
+* Doctors
+***************************/
+
+/************************** 
+* Doctor profile
+***************************/
+
+/************************** 
+* Placeholder
+***************************/
+
+::-webkit-input-placeholder {
+    color: #7e7e7e !important;
+}
+
+::-moz-placeholder {
+    color: #7e7e7e !important;
+}
+
+:-ms-input-placeholder {
+    color: #7e7e7e !important;
+}
+
+:-moz-placeholder {
+    color: #7e7e7e !important;
+}
+
+/************************** 
+* Scrollbar Reset
+***************************/
+
+.left-panel::-webkit-scrollbar {
+    width: 5px;
+}
+
+.left-panel::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+.left-panel::-webkit-scrollbar-thumb {
+    background-color: #dae2f3;
+    border: 1px solid #ffffff;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.left-panel:hover::-webkit-scrollbar-thumb {
+    opacity: 1;
+    visibility: visible;
+}
+
+/************************** 
+* Main Color
+***************************/
+
+/************************** 
+* Main Color
+***************************/
+
+/************************** 
+* Timeline
+***************************/
+
+/*****************************
+Badge
+*****************************/
+
+/************************** 
+* Main Color
+***************************/
+
+/************************** 
+* Border
+***************************/
+
+/************************** 
+* Heading colors
+***************************/
+
+/************************** 
+* Button
+***************************/
+
+/************************** 
+* Top Head
+***************************/
+
+/************************** 
+* Navbar
+***************************/
+
+/*****************************
+Buttons
+*****************************/
+
+/************************** 
+* breadcrumb
+***************************/
+
+/************************** 
+* Crad 
+***************************/
+
+/************************** 
+* Custome classes Bootstrap
+***************************/
+
+/************************** 
+* Calander Pallete 
+***************************/
+
+/************************** 
+* Font-weight
+***************************/
+
+/************************** 
+* Main Fonts
+***************************/
+
+/************************** 
+* shadow variables
+***************************/
+
+/************************** 
+* Heading
+***************************/
+
+/************************** 
+* Heading
+***************************/
+
+/************************** 
+* Modal
+***************************/
+
+/************************** 
+* Float fixing
+***************************/
+
+/************************** 
+* Text Align
+***************************/
+
+/************************** 
+* Transition
+***************************/
+
+.header .top-head .nav-control .hamburger,
+.header .top-head .nav-control .hamburger .line,
+.widget-7 .account-control .account-dropdown-form,
+.widget-7 .account-control .account-dropdown-form:before,
+.widget-7 .account-control:hover .account-dropdown-form {
+    -webkit-transition: all 0.5s ease-in-out !important;
+    -o-transition: all 0.5s ease-in-out !important;
+    transition: all 0.5s ease-in-out !important;
+}
+
+.sidebar-widgets,
+.header,
+.header .top-head,
+.widget-7 .account-control .account-dropdown-form .form-content a,
+.widget-7 .account-control .account-dropdown-form .form-content a:hover,
+.widget-7 .account-control .account-dropdown-form .form-content a:hover span,
+.widget-7 .account-control .account-dropdown-form .form-content a:hover i:before,
+.widget-7 .account-control .account-dropdown-form .form-content a i:before,
+.widget-7 .account-control .account-dropdown-form .form-content a span,
+.nav-header,
+.nav-header .brand-logo .logo-tabib,
+.nav-header .brand-logo .brand-title,
+.nav-header .brand-logo,
+.navigation .main-menu .has-submenu,
+.navigation .main-menu .has-submenu a,
+.navigation .main-menu .has-submenu a i,
+.navigation .main-menu .has-submenu a .nav-label,
+.navigation .main-menu .has-submenu .has-arrow:after,
+.navigation .main-menu .has-submenu .mm-collapse,
+.navigation .main-menu .has-submenu:hover .nav-label,
+.navigation .main-menu .has-submenu:hover i,
+.navigation .main-menu .has-submenu.active,
+.navigation .main-menu .has-submenu.active a,
+.navigation .main-menu .has-submenu.active a .nav-label,
+td span,
+td span:hover,
+.card,
+.left-panel,
+.content-body,
+.footer {
+    -webkit-transition: all .2s ease !important;
+    -o-transition: all .2s ease !important;
+    transition: all .2s ease !important;
+}
+
+/************************** 
+* Button
+***************************/
+
+/************************** 
+* Box Shadow
+***************************/
+
+.shadow,
+.card {
+    -webkit-box-shadow: 0 0 40px rgba(8, 21, 66, 0.05) !important;
+    box-shadow: 0 0 40px rgba(8, 21, 66, 0.05) !important;
+}
+
+.header .top-head,
+.widget-7,
+.widget-7 .account-control .account-dropdown-form .form-content,
+.nav-header,
+.left-panel,
+.footer {
+    -webkit-box-shadow: 0 0 20px rgba(89, 102, 122, 0.1) !important;
+    box-shadow: 0 0 20px rgba(89, 102, 122, 0.1) !important;
+}
+
+/************************** 
+* Box Sizing
+***************************/
+
+/************************** 
+* Padding
+***************************/
+
+/************************** 
+* Boreder None
+***************************/
+
+/************************** 
+*Fonts 
+***************************/
+
+.text-primary {
+    color: #7366ff !important;
+}
+
+/************************** 
+* Media Queries
+***************************/
+
+/************************** 
+* Border radius
+***************************/
+
+/************************** 
+* Transition Delay
+***************************/
+
+/************************** 
+* Text Transform
+***************************/
+
+/************************** 
+* Border T R B L
+***************************/
+
+/************************** 
+* Media Query
+***************************/
+
+/************************** 
+* Components
+***************************/
+
+/************************** 
+* Content Folder
+***************************/
+
+/************************** 
+* Widget 
+***************************/
+
+.widget .media {
+    display: flex;
+    align-items: center;
+}
+
+.widget .media span {
+    font-size: 12px;
+}
+
+.widget .media .media-body {
+    margin-left: 30px;
+    text-align: left;
+}
+
+.widget .media .media-body span {
+    font-size: 14px;
+}
+
+/************************** 
+* Widget Module 1
+***************************/
+
+.widget1 .subtitle {
+    padding-top: 0 !important;
+}
+
+/************************** 
+* Widget Module 2
+***************************/
+
+/************************** 
+* Widget Module 3
+***************************/
+
+/************************** 
+* Widget Module 4
+***************************/
+
+/************************** 
+* Image Upload
+***************************/
+
+/************************** 
+* Widget Timline
+***************************/
+
+/************************** 
+* Widget Progress
+***************************/
+
+/************************** 
+* Widget Progress
+***************************/
+
+.sidebar-widgets {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.sidebar-widgets .top-sidebar .side-img {
+    margin-bottom: 10px;
+}
+
+.sidebar-widgets .top-sidebar h4 {
+    font-size: 14px;
+}
+
+.sidebar-widgets .copyright p {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/************************** 
+* Calender Sidebar
+***************************/
+
+/************************** 
+* Calender
+***************************/
+
+/************************** 
+* Hedaer Folder
+***************************/
+
+/************************** 
+* Timeline
+***************************/
+
+/* Scrollbar */
+
+/************************** 
+* Top Header
+***************************/
+
+/************************** 
+* Top Header
+***************************/
+
+.header {
+    height: 6rem;
+    position: relative;
+    padding: 0rem;
+    background-color: #ffffff;
+    z-index: 3;
+    padding-left: 300px;
+}
+
+@media only screen and (max-width: 1199px) {
+    .header {
+        height: 5rem;
+        padding-left: 5rem;
+    }
+}
+
+.header .top-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 22px 30px;
+}
+
+.header .top-head .nav-control {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+    z-index: 9999;
+    font-size: 1.4rem;
+    padding: 0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.header .top-head .nav-control .hamburger {
+    display: inline-block;
+    left: 0px;
+    position: relative;
+    top: 0;
+    width: 26px;
+    z-index: 999;
+    margin-right: 20px;
+}
+
+.header .top-head .nav-control .hamburger .line {
+    background: #7366ff;
+    display: block;
+    height: 3px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    margin-left: auto;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.header .top-head .nav-control .hamburger .line:nth-child(1) {
+    width: 20px;
+    margin-top: 0;
+}
+
+.header .top-head .nav-control .hamburger .line:nth-child(2) {
+    width: 26px;
+}
+
+.header .top-head .nav-control .hamburger .line:nth-child(3) {
+    width: 22px;
+    margin-bottom: 0;
+}
+
+.header .top-head .nav-control .hamburger:hover .line {
+    width: 26px;
+}
+
+.header .top-head .header-right {
+    display: flex;
+    align-items: center;
+}
+
+.widget-5 {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.widget-5 .full a {
+    position: relative;
+    color: #7366ff;
+    background: #f8f8f8;
+    padding: 15px;
+    font-size: 14px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 1199px) {
+    .widget-5 .full a {
+        padding: 15px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .widget-5 {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .widget-5 {
+        display: none !important;
+    }
+}
+
+.widget-6 {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 767px) {
+    .widget-6 {
+        position: static;
+    }
+}
+
+.widget-6 .cart-wrapper .cart-icon {
+    position: relative;
+    color: #7366ff;
+    background: #f8f8f8;
+    padding: 15px;
+    line-height: 1;
+    font-size: 18px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 991px) {
+    .widget-6 .cart-wrapper .cart-icon {
+        padding: 0 !important;
+        height: 40px;
+        width: 40px;
+        line-height: 40px !important;
+        text-align: center;
+        border-radius: 5px;
+    }
+}
+
+.widget-6 .cart-wrapper .cart-icon .cart-control i {
+    font-size: 15px;
+    color: #ffcc40;
+}
+
+.widget-7 {
+    background-color: #ffffff;
+    padding: 10px 12px;
+    position: relative;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.widget-7 .account-control .header-profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.widget-7 .account-control .header-profile .header-info {
+    padding-right: 20px;
+    text-align: right;
+}
+
+@media only screen and (max-width: 1199px) {
+    .widget-7 .account-control .header-profile .header-info {
+        padding-right: 10px;
+    }
+}
+
+.widget-7 .account-control .header-profile .header-info span {
+    font-weight: 500;
+    line-height: 24px;
+    color: #2b2b2b;
+}
+
+.widget-7 .account-control .header-profile .header-info small {
+    display: block;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1;
+    font-family: "Roboto", sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+    .widget-7 .account-control .header-profile .header-info {
+        display: none;
+    }
+}
+
+.widget-7 .account-control .header-profile img {
+    width: 37px;
+    height: 37px;
+    background-color: #f8f8f8;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 1199px) {
+    .widget-7 .account-control .header-profile img {
+        width: 39px;
+        height: 39px;
+    }
+}
+
+.widget-7 .account-control .account-dropdown-form {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    min-width: 10.8rem;
+    min-height: 100px;
+    padding: 15px 0;
+    padding-top: 36px;
+    padding-bottom: 0;
+    z-index: 99999;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(30px);
+    -webkit-border-radius: 5px !important;
+    -moz-border-radius: 5px !important;
+    border-radius: 5px !important;
+}
+
+@media only screen and (max-width: 1199px) {
+    .widget-7 .account-control .account-dropdown-form {
+        top: 33px;
+    }
+}
+
+.widget-7 .account-control .account-dropdown-form:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 18px;
+    bottom: 0;
+    content: "";
+    z-index: -1;
+    display: block;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.widget-7 .account-control .account-dropdown-form .form-content {
+    padding: 5px 0;
+    padding-top: 8px;
+    background: #ffffff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.widget-7 .account-control .account-dropdown-form .form-content a {
+    padding: 8px 24px;
+    color: #7e7e7e;
+    display: inherit;
+    border-top: 1px solid #ecf3fa;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.widget-7 .account-control .account-dropdown-form .form-content a:hover {
+    background-color: #f8f8f8;
+}
+
+.widget-7 .account-control .account-dropdown-form .form-content a:hover span {
+    color: #7366ff;
+}
+
+.widget-7 .account-control .account-dropdown-form .form-content a:hover i:before {
+    color: #7366ff;
+}
+
+.widget-7 .account-control .account-dropdown-form .form-content a:first-child {
+    border: none;
+}
+
+.widget-7 .account-control .account-dropdown-form .form-content a i:before {
+    margin-right: 10px;
+    color: #2c323f;
+}
+
+.widget-7 .account-control .account-dropdown-form .form-content a span {
+    color: #2c323f;
+}
+
+.widget-7 .account-control:hover .account-dropdown-form {
+    visibility: visible;
+    opacity: 1;
+    display: inherit;
+    transform: translateY(0px);
+}
+
+.header-right>div {
+    float: right;
+    margin-left: 10px;
+}
+
+@media only screen and (max-width: 1199px) {
+    .header-right>div {
+        margin-left: 0.5rem;
+    }
+}
+
+@-webkit-keyframes pulse-me {
+    0% {
+        -webkit-transform: scale(0.3);
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.1;
+    }
+    70% {
+        opacity: 0.09;
+    }
+    100% {
+        -webkit-transform: scale(3);
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse-me {
+    0% {
+        -webkit-transform: scale(0.3);
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.1;
+    }
+    70% {
+        opacity: 0.09;
+    }
+    100% {
+        -webkit-transform: scale(3);
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+/******************************* 
+    * Resize -  mini - overlay
+********************************/
+
+.pulse-css {
+    width: 0.4rem;
+    height: 0.4rem;
+    position: absolute;
+    background-color: #ffcc40;
+    right: 5px;
+    top: 0.6rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.pulse-css:after,
+.pulse-css:before {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: -0.2rem;
+    background-color: #ffcc40;
+    margin: auto;
+    -webkit-transform: scale(0.3);
+    transform: scale(0.3);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation: pulse-me 3s linear infinite;
+    animation: pulse-me 3s linear infinite;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+/************************** 
+* Sidebar Folder
+***************************/
+
+/************************** 
+* Logo
+***************************/
+
+.nav-header {
+    width: 300px;
+    height: 6rem;
+    display: inline-block;
+    text-align: left;
+    left: 0;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 13;
+    position: fixed;
+}
+
+@media only screen and (max-width: 1199px) {
+    .nav-header {
+        height: 5rem;
+        width: 5rem;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .nav-header {
+        height: 5rem;
+        width: 5rem;
+    }
+}
+
+.nav-header .brand-logo {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.125rem;
+    color: #ffffff;
+    text-decoration: none;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-weight: 700;
+}
+
+.nav-header .brand-logo .logo-tabib {
+    max-width: 45px;
+}
+
+@media only screen and (max-width: 767px) {
+    .nav-header .brand-logo .logo-tabib {
+        max-width: 35px;
+    }
+}
+
+.nav-header .brand-logo .brand-title {
+    margin-left: 5px;
+    max-width: 100px;
+    margin-top: 5px;
+}
+
+@media only screen and (max-width: 1199px) {
+    .nav-header .brand-logo .brand-title {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .nav-header .brand-logo {
+        padding-left: 0;
+        padding-right: 0;
+        justify-content: center;
+    }
+}
+
+/************************** 
+    * Resize Full - Mini - 
+***************************/
+
+/************************** 
+* Side Menu
+***************************/
+
+.navigation {
+    margin: 40px 0px;
+    margin-top: 0;
+}
+
+.navigation .main-menu {
+    padding-top: 30px;
+}
+
+.navigation .main-menu .has-submenu {
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.navigation .main-menu .has-submenu a {
+    display: flex;
+    align-items: center;
+    color: #7f7184;
+    padding: 15px 20px;
+    width: 100%;
+    position: relative;
+    text-decoration: none !important;
+    letter-spacing: 0.7px;
+    font-family: "Roboto", sans-serif;
+    text-transform: capitalize;
+    font-weight: 500;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.navigation .main-menu .has-submenu a i {
+    font-size: 15px;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 1.5rem 0 0;
+    position: relative;
+    top: 0;
+    color: #aa97b0;
+    width: 40px;
+}
+
+.navigation .main-menu .has-submenu .has-arrow:after {
+    position: absolute;
+    content: "";
+    border-style: solid;
+    border-width: 1px 0 0 1px;
+    border-color: initial;
+    -webkit-transform: rotate(-45deg) translateY(-50%);
+    transform: rotate(-45deg) translateY(-50%);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    top: 50%;
+}
+
+.navigation .main-menu .has-submenu .has-arrow:after {
+    width: 0.5rem;
+    height: 0.5rem;
+    right: 1.875rem;
+    top: 48%;
+    border-color: #828690;
+    -webkit-transform: rotate(-225deg) translateY(-50%);
+    transform: rotate(-225deg) translateY(-50%);
+}
+
+.navigation .main-menu .has-submenu .mm-collapse {
+    display: none;
+    position: relative;
+    z-index: 1;
+    padding: 0.5rem 0;
+}
+
+.navigation .main-menu .has-submenu .mm-collapse li a {
+    text-align: left;
+    position: relative;
+    display: block;
+    padding: 0.625rem 1.875rem;
+    color: #7e7e7e;
+    text-decoration: none;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 3.7rem;
+    background: transparent;
+}
+
+.navigation .main-menu .has-submenu .mm-collapse li:hover a {
+    background-color: #f8f8f8;
+}
+
+.navigation .main-menu .has-submenu:hover a {
+    background-color: #f8f8f8;
+}
+
+.navigation .main-menu .has-submenu:hover .nav-label,
+.navigation .main-menu .has-submenu:hover i {
+    color: #7366ff;
+}
+
+.navigation .main-menu .has-submenu.active a {
+    color: #ffffff;
+    background-color: #f8f8f8;
+    padding: 15px 20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.navigation .main-menu .has-submenu.active a i {
+    color: #7366ff;
+}
+
+.navigation .main-menu .has-submenu.active a .nav-label {
+    color: #7366ff;
+}
+
+/************************** 
+* Media specifique
+***************************/
+
+/************************** 
+* Resize Mini
+***************************/
+
+/************************** 
+*Ui Folder
+***************************/
+
+/*****************************
+Badge
+*****************************/
+
+.badge {
+    display: inline-block;
+    font-size: 75%;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    border-radius: 5px !important;
+    opacity: 1;
+    min-width: 110px;
+    line-height: 1.5;
+    padding: 4px 10px;
+    border: 1px solid transparent;
+}
+
+/*****************************
+Badge Palettes
+*****************************/
+
+.badge-primary {
+    color: #ffffff;
+    background-color: #7366ff;
+}
+
+/*****************************
+Buttons
+*****************************/
+
+/*****************************
+Default button style
+*****************************/
+
+/*****************************
+Button Size
+*****************************/
+
+/*****************************
+Dropdown Style 1
+*****************************/
+
+/*****************************
+Dropdown
+*****************************/
+
+/************************** 
+* Forms
+***************************/
+
+/************************** 
+* modal
+***************************/
+
+/************************** 
+* modal-content
+***************************/
+
+/************************** 
+* modal-header
+***************************/
+
+/************************** 
+* modal-body
+***************************/
+
+/************************** 
+* modal-footer
+***************************/
+
+/************************** 
+* Modal Dialog Centered
+***************************/
+
+/************************** 
+* Modal Backdrop
+***************************/
+
+/************************** 
+* Modal Dialog Scrollable
+***************************/
+
+/************************** 
+* Data Table
+***************************/
+
+table td,
+table th {
+    color: #7e7e7e;
+    vertical-align: top;
+}
+
+table thead tr {
+    background-color: #f8f8f8;
+}
+
+/************************** 
+* DataTables Info
+***************************/
+
+td span {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+td span:hover {
+    opacity: 1;
+}
+
+/************************** 
+* Breadcrumb
+***************************/
+
+.page-titles {
+    padding: 0;
+    background: transparent;
+    padding-bottom: 30px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.page-titles p {
+    font-size: 12px;
+    color: rgba(43, 43, 43, 0.7);
+    margin-top: 0;
+    display: block;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+/************************** 
+* Card
+***************************/
+
+.card {
+    margin-bottom: 1.875rem;
+    background-color: #ffffff;
+    position: relative;
+    border: 0px solid transparent;
+    letter-spacing: 0.5px;
+    height: calc(100% - 30px);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+@media custommq {
+    .card {
+        margin-bottom: 0.938rem;
+        height: calc(100% - 0.938rem);
+    }
+}
+
+.card-header {
+    border-color: #ecf3fa;
+    position: relative;
+    background: transparent;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header .card-title {
+    margin-bottom: 0px;
+    text-transform: capitalize;
+    color: #2b2b2b;
+    font-size: 22px;
+}
+
+.card-header .subtitle {
+    font-size: 12px;
+    line-height: 1px;
+    color: rgba(43, 43, 43, 0.7);
+    margin-top: 0;
+    display: block;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+@media only screen and (max-width: 767px) {
+    .card-header {
+        padding: 1rem;
+    }
+}
+
+.card-body {
+    padding: 30px;
+}
+
+@media only screen and (max-width: 767px) {
+    .card-body {
+        padding: 20px;
+    }
+}
+
+/*****************************
+Card Palettes
+*****************************/
+
+.card-primary {
+    color: #ffffff;
+    background-color: #7366ff;
+}
+
+.card-danger {
+    color: #ffffff;
+    background-color: #dc3545;
+}
+
+/************************** 
+* Progress
+***************************/
+
+/************************** 
+* layouts
+***************************/
+
+/*****************************
+sidebar toggled
+*****************************/
+
+/*****************************
+Left Panel (aside navigation)
+*****************************/
+
+.left-panel {
+    left: 0px;
+    z-index: 5;
+    width: 300px;
+    padding-bottom: 0;
+    height: 100vh;
+    top: 6rem;
+    padding-top: 0;
+    padding-bottom: 100px;
+    background-color: #ffffff;
+    overflow-y: scroll;
+}
+
+@media only screen and (max-width: 1199px) {
+    .left-panel {
+        width: 5rem;
+        overflow: visible;
+        position: absolute;
+        z-index: 2;
+        top: 5rem;
+        height: calc(100% - 80px);
+    }
+}
+
+/************************** 
+    * Resize Full
+***************************/
+
+/************************** 
+    * Resize Mini
+***************************/
+
+/************************** 
+    * Resize Overlay
+***************************/
+
+/*****************************
+Content Area (right)
+*****************************/
+
+#main-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.content-body {
+    margin-left: 300px;
+    z-index: 0;
+    padding-top: 6rem;
+    background-color: #f8f8f8;
+}
+
+.content-body .container-fluid {
+    padding-top: 30px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+    .content-body .container-fluid {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .content-body {
+        padding-top: 5rem;
+        margin-left: 5rem;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .content-body {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+/***************************** 
+    * Resize mini - overlay
+******************************/
+
+/*****************************
+Authentification
+*****************************/
+
+/************************** 
+* Footer
+***************************/
+
+.footer {
+    padding-left: 300px;
+    background-color: #ffffff;
+}
+
+.footer .copyright {
+    padding: 0.9375rem;
+}
+
+.footer .copyright p {
+    text-align: center;
+}
+
+.footer .copyright a {
+    color: #7366ff;
+}
+
+@media only screen and (max-width: 767px) {
+    .footer {
+        padding-left: 0;
+    }
+}
+
+/************************** 
+* Media specifique
+***************************/
+
+/************************** 
+* Import files
+***************************/
+
+/************************** 
+* 
+***************************/
+
+/************************** 
+* Header
+***************************/
+
+/************************** 
+* 
+***************************/
+
+/************************** 
+* 
+***************************/
+
+/************************** 
+* Footer
+***************************/
+
+/************************** 
+* Component Global
+***************************/
+
+/************************** 
+* Panel Global
+***************************/
+
+/*****************************
+Main Color
+*****************************/
+
+/************************** 
+* Main Color
+***************************/
+
+/************************** 
+* Main Color
+***************************/
+
+/************************** 
+* Timeline
+***************************/
+
+/*****************************
+Badge
+*****************************/
+
+/************************** 
+* Main Color
+***************************/
+
+/************************** 
+* Border
+***************************/
+
+/************************** 
+* Heading colors
+***************************/
+
+/************************** 
+* Button
+***************************/
+
+/************************** 
+* Top Head
+***************************/
+
+/************************** 
+* Navbar
+***************************/
+
+/*****************************
+Buttons
+*****************************/
+
+/************************** 
+* breadcrumb
+***************************/
+
+/************************** 
+* Crad 
+***************************/
+
+/************************** 
+* Custome classes Bootstrap
+***************************/
+
+/************************** 
+* Calander Pallete 
+***************************/
+
+/************************** 
+* Sidebar Text
+***************************/
+
+/*****************************
+Topbar Color
+*****************************/
+
+/************************** 
+* Sidebar Text
+***************************/
+
+/************************** 
+* Sidebar Text
+***************************/
+
+/*****************************
+Topbar Color
+*****************************/
+
+/************************** 
+* Sidebar Text
+***************************/
+
+/*****************************
+Topbar Color
+*****************************/
+
+/************************** 
+* Sidebar Text
+***************************/
+
+/*****************************
+Topbar Color
+*****************************/
+
+/************************** 
+* Sidebar Text
+***************************/
+
+/*****************************
+Topbar Color
+*****************************/
+
+/************************** 
+* Sidebar Text
+***************************/
+
+/*****************************
+Topbar Color
+*****************************/
+
+/************************** 
+* Sidebar Text
+***************************/
+
+/*****************************
+Topbar Color
+*****************************/
+
+/************************** 
+* Sidebar Text
+***************************/
+
+/*****************************
+Topbar Color
+*****************************/
+
+/************************** 
+* Sidebar Text
+***************************/
+
+/*****************************
+Topbar Color
+*****************************/
+
+/************************** 
+* Sidebar Text
+***************************/
+
+/*****************************
+Topbar Color
+*****************************/
+
+/************************** 
+* Sidebar Text
+***************************/
+
+/*****************************
+Topbar Color
+*****************************/
+
+/************************** 
+* Sidebar Text
+***************************/
+
+/*****************************
+Topbar Color
+*****************************/
+
+/************************** 
+* Menu Toggle
+***************************/
+
+/************************** 
+* Sidemenu layout Styles
+***************************/
+
+/************************** 
+* Layout Width Styles
+***************************/
+
+/************************** 
+* Layout Positions
+***************************/
+
+/*****************************
+Main Color
+*****************************/
+
+/*****************************
+Main Color class
+*****************************/
+
+/*****************************
+Theme Customizer
+*****************************/
+
+/*****************************
+Variable 
+*****************************/
+
+/*****************************
+Navigation Header
+*****************************/
+
+/*****************************
+Sidebar Color
+*****************************/
+
+/*****************************
+Topbar Color
+*****************************/
+
+/************************** 
+* layouts
+***************************/
+
+/*# sourceMappingURL=style.css.map */
